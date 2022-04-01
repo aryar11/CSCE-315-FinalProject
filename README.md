@@ -1,1 +1,1 @@
-# chat-app
+# Happy Campers Web App
