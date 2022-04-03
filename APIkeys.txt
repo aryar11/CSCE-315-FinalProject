@@ -1,0 +1,26 @@
+OpenWeather:
+  API key: a6b714ce7c4872dfde0a49406a4c050b
+  API call: https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}
+  
+TrailAPi:
+  Price:10 / day + $0.01 each other
+  
+  API Call Documentation: https://rapidapi.com/trailapi/api/trailapi/
+  
+  API Key: 3b33ecc570msh452ac6e3eba3483p1f8ac5jsn49f67d38bdb5
+  
+Hiker API:
+  API Documentation: https://documenter.getpostman.com/view/2071749/RzZDiGp8
+  I don't think it requires a key
+  
+National Park Service API:
+  API Key: clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu
+  API Call: https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu
+  API Doc: https://www.nps.gov/subjects/developer/api-documentation.htm
+  
+Fuel Price API: 
+  API Key: clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu
+  API Doc: https://developer.here.com/documentation/fuel-prices/dev_guide/topics/overview.html
+ 
+Google Translate API:
+  
