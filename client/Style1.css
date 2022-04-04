@@ -1,77 +1,135 @@
-.topnav{
-    background-color: lightgray;
-    overflow: hidden;
-  }
-.topnav a{
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 16px 20px;
-    text-decoration: none;
-    font-size: 20px;
-  }
+.topnav {
+  background-color: rgb(133, 223, 105);
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
 .topnav a:hover {
-    background-color: lightgreen;
-    color: black;
- }
- .topnav a.active {
-    background-color: lightgreen;
-    color: black;
+  background-color: lightgreen;
+  color: black;
+}
+.topnav a.active {
+  background-color: lightgreen;
+  color: black;
+}
+#logo {
+  float: left;
+  display: inline-block;
+  width: 8%;
+  height: auto;
 }
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
 /* The side navigation menu */
 .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: white; /*Same as page color*/
-    position: fixed;
-    height: 100%;
-    overflow: auto;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: white; /*Same as page color*/
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: lightgreen;
+  color: black;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: lightgreen;
+  color: black;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
   }
-  
-  /* Sidebar links */
   .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
+    float: left;
   }
-  
-  /* Active/current link */
-  .sidebar a.active {
-    background-color: lightgreen;
-    color: black;
-  }
-  
-  /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-    background-color: lightgreen;
-    color: black;
-  }
-  
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
+    margin-left: 0;
   }
-  
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  }
+}
+
+/*plan Result*/
+* {
+  box-sizing: border-box;
+}
+
+/* Set height of body and the document to 100% */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33.33333%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 268px 20px;
+  height: 100%;
+}
+
+#Overview {
+  background-color: rgb(219, 100, 100);
+}
+#Logistics {
+  background-color: rgb(50, 133, 50);
+}
+#Create\ Itenerary {
+  background-color: rgb(85, 85, 240);
+}
