@@ -1,5 +1,6 @@
 .topnav {
   background-color: rgb(133, 223, 105);
+  height: auto;
   overflow: hidden;
 }
 .topnav a {
