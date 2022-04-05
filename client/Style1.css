@@ -73,6 +73,12 @@ div.form-button {
   background-color: rgba(124, 142, 75, .75);
 }
 
+button {
+  border: none;
+  color: white;
+  background-color: rgb(192, 218, 116);
+}
+
 /* Not working - would love to not have an outline */
 input:focus {
   outline: none;
@@ -158,13 +164,13 @@ html {
 
 /* headers */
 h1 {
-  color: rgb(124, 142, 75);
+  color: rgb(43, 58, 103);
   text-align: center;
   font-family: Poppins, sans-serif;
 }
 
 h2 {
-  color: rgb(43, 58, 103);
+  color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
 }
 
