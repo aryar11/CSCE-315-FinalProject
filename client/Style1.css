@@ -187,6 +187,10 @@ div {
     font-family: Poppins, sans-serif;
 }
 
+div.results {
+  text-align: center;
+}
+
 a:hover {
   color: rgb(79, 114, 67);
 }
