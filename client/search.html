@@ -29,10 +29,14 @@
   <main>
     <h1>Explore Around You</h1>
   <div class = "search">
-    <input type="text" size="20" id="autocomplete" placeholder="Search By State Or City..." autocomplete="on">
-    <button type="submit"><i class="fa fa-search">Submit</i></button>
+    <div id = "searchWrapper">
+      <input type="text" size="20" id="autocomplete" placeholder="Search By State Or City..." autocomplete="on">
+      <button type="submit"><i class="fa fa-search">Submit</i></button>
+    </div>
+    <ul id="parksList"></ul>
   </div>
   </main>
+  <script src = "searchResults.js"></script>
   <script src="main.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6S6lDX249i90uGLFx1HoA_qUusGzYWDg&libraries=places&callback=initialize" type="text/javascript"></script>
   <script type="text/javascript">
