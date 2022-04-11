@@ -1,6 +1,12 @@
+.main{
+  margin-top: 40px;
+}
 .topnav {
   background-color: rgb(255,255,255);
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .topnav a {
   float: left;
@@ -124,6 +130,7 @@ body,
 html {
   height: 100%;
   margin: 0;
+  margin-top: 30px;
   font-family: Arial;
 }
 
@@ -173,6 +180,11 @@ h2 {
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
 }
+h2.Prepare{
+  color: rgb(124, 142, 75);
+  font-family: Poppins, sans-serif;
+  margin-top: 60px;
+}
 
 p {
   font-family: Poppins, sans-serif;
@@ -185,6 +197,10 @@ a {
 
 div {
     font-family: Poppins, sans-serif;
+}
+
+div.results {
+  text-align: center;
 }
 
 a:hover {
