@@ -83,12 +83,15 @@ button {
   border: none;
   color: white;
   background-color: rgb(192, 218, 116);
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  margin: 50px;
+  display: inline-block;
+
 }
 
-/* Not working - would love to not have an outline */
-input:focus {
-  outline: none;
-}
+
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
@@ -165,7 +168,7 @@ html {
 #Logistics {
   background-color: rgb(77, 100, 22);
 }
-#Create\ Itenerary {
+#Create\ Itinerary {
   background-color: rgb(44, 57, 102);
 }
 
