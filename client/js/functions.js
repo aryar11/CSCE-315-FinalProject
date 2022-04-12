@@ -11,7 +11,7 @@ function generateParkInfo(){
 
     var options = {
     'method': 'GET',
-    'url': 'https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&stateCode=OR',
+    'url': 'https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&stateCode=TX',
     'headers': {
         'api_key': 'clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu'
       },
@@ -29,24 +29,5 @@ function generateParkInfo(){
             iteminJSON = getRandomInt(response.body.limit );
             document.write("2");
         }
-        console.log(response.body.data[iteminJSON]);
+       console.log(response.body.data[iteminJSON]);
     });
-
-  }
-
-  function displayPark() {
-  // document.display("hello");
-  // const park = data.name;
-  // const heading = document.createElement("h1");
-  // heading.innerHTML = park;
-
-  var options = {
-  'method': 'GET',
-  'url': 'https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&stateCode=OR',
-  'headers': {
-      'api_key': 'clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu'
-    },
-    json:true
-  };
-
-}
