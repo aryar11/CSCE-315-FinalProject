@@ -2,6 +2,11 @@ const searchButton = document.getElementById('searchButton');
 searchButton.addEventListener("click", getParks);
 
 function getParks(){
+    const resultsDiv = document.getElementById('results')
+    console.log(resultsDiv);
+    if(resultsDiv != null){
+        resultsDiv.remove();
+    }
     fetch('https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu')
         .then(response => response.json())
         .then(parks => showParks(parks.data));
@@ -16,13 +21,16 @@ searchResults.addEventListener('keyup', (e) => {
 
 showParks = parks => {
     const parksDiv = document.querySelector('#parksList');
+    const resultsDiv = document.createElement('div');
+    resultsDiv.setAttribute("id", "results");
+    parksDiv.append(resultsDiv);
     parks.forEach(park => {
       const parkElement = document.createElement('p');
       parkElement.innerText = `Park Name: ${park.fullName}`;
-      console.log(park.states == userIn);
+     //console.log(park.states == userIn);
       if(park.states == userIn){
           console.log(park.states);
-          parksDiv.append(parkElement);
+          resultsDiv.append(parkElement);
       }
     });
 }
