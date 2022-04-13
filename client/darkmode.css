@@ -1,0 +1,239 @@
+/* COLOR PALETTE:
+  black: rgb(16, 17, 22)
+  green: rgb(192, 218, 116)
+  white: rgb(240, 240, 240)
+ */
+
+
+.main{
+  margin-top: 40px;
+}
+.topnav {
+  background-color: rgb(16, 17, 22);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.topnav a:hover {
+  background-color: rgba(192, 218, 116, .5);
+  color: white;
+}
+.topnav a.active {
+  background-color: rgba(192, 218, 116, .2);
+  color: white;
+}
+#logo {
+  float: left;
+  display: inline-block;
+  width: 35%;
+  height: auto;
+  padding-right: 20px;
+}
+
+/* -------------------------------- PREPARE -------------------------------- */
+/*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: white; /*Same as page color*/
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: rgba(192, 218, 116, .5);
+  color: black;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: rgba(192, 218, 116, .5);
+  color: black;
+}
+
+div.form {
+  display: block;
+  text-align: center;
+}
+
+form.planner {
+  display: inline-block;
+  text-align: left;
+}
+
+div.form-button {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(124, 142, 75, .75);
+}
+
+button {
+  border: none;
+  color: rgb(16, 17, 22);
+  background-color: rgb(192, 218, 116);
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  margin: 50px;
+  display: inline-block;
+
+}
+
+
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/*plan Result*/
+* {
+  box-sizing: border-box;
+}
+
+/* Set height of body and the document to 100% */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  margin-top: 30px;
+  font-family: Arial;
+  background-color: rgb(16, 17, 22);
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33.33333%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 268px 20px;
+  height: 100%;
+}
+
+#Overview {
+  background-color: rgb(203, 75, 0);
+}
+#Logistics {
+  background-color: rgb(77, 100, 22);
+}
+#Create\ Itinerary {
+  background-color: rgb(44, 57, 102);
+}
+
+/* headers */
+h1 {
+  color: rgb(240, 240, 240);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  /* margin-top: 100px; */
+}
+
+h1.home {
+  color: rgb(240, 240, 240);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  margin-top: 150px;
+}
+
+h2 {
+  color: rgb(240, 240, 240);
+  font-family: Poppins, sans-serif;
+}
+h2.Prepare{
+  color: rgb(240, 240, 240);
+  font-family: Poppins, sans-serif;
+  margin-top: 60px;
+}
+
+p {
+  font-family: Poppins, sans-serif;
+  color: rgb(240, 240, 240);
+}
+
+a {
+  color: rgb(192, 218, 116);
+  font-family: Poppins, sans-serif;
+}
+
+div {
+    font-family: Poppins, sans-serif;
+}
+
+div.results {
+  text-align: center;
+}
+
+a:hover {
+  color: rgb(79, 114, 67);
+}
+
+div.search {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search input {
+  size: 50;
+}
