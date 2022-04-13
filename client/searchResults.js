@@ -1,16 +1,45 @@
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener("click", getParks);
+
+function getParks(){
+    fetch('https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu')
+        .then(response => response.json())
+        .then(parks => showParks(parks.data));
+}
+
 const searchResults = document.getElementById('autocomplete');
+let userIn = "";
+searchResults.addEventListener('keyup', (e) => {
+    console.log(e.target.value);
+    userIn = e.target.value;
+});
+
+showParks = parks => {
+    const parksDiv = document.querySelector('#parksList');
+    parks.forEach(park => {
+      const parkElement = document.createElement('p');
+      parkElement.innerText = `Park Name: ${park.fullName}`;
+      console.log(park.states == userIn);
+      if(park.states == userIn){
+          console.log(park.states);
+          parksDiv.append(parkElement);
+      }
+    });
+}
+
+
+/*const searchResults = document.getElementById('autocomplete');
+const parksList = document.getElementById('parksList');
 
 let userIn = "";
-let parks = [];
+let parksArr = [];
 searchResults.addEventListener('keyup', (e) => {
     console.log(e.target.value);
     userIn = e.target.value;
     console.log(userIn);
     loadParks();
-    //parks.filter();
 });
 
-const parksList = document.getElementById('parksList');
 const statesCon = [
     ['Arizona', 'AZ'],
     ['Alabama', 'AL'],
@@ -98,19 +127,26 @@ const loadParks = async() => {
             }else{
                 stateVal = userIn;
             }
-            //console.log("test");
         }
-
-        //console.log(splitCity[1]);
         for (let i = 0; i < parks.data.length; i++){
-            //console.log(parks.data[i].states);
             if(parks.data[i].states == stateVal){
                 console.log(parks.data[i]);
+                displayParks(parks.data[i]);
             }
         }
-        //console.log(parks);
     }
     catch(err){
         console.error(err);
     }
 };
+
+displayParks = parks => {
+    const parksDiv = document.querySelector('#parksList');
+    parks.forEach(park =>{
+        const parkElement = document.createElement('p');
+        parkElement.innerText = 'Park Name: ${parks.data.fullName}';
+        parksDiv.append(parkElement);
+    });
+}*/
+
+
