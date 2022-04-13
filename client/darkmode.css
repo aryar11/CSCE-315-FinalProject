@@ -8,11 +8,22 @@
 .main{
   margin-top: 40px;
 }
+
+#logo {
+  float: left;
+  display: inline-block;
+  width: 35%;
+  height: auto;
+  margin: 20px;
+  top: 0px;
+  /* padding-right: px; */
+}
+
 .topnav {
   background-color: rgb(16, 17, 22);
   overflow: hidden;
   position: fixed;
-  top: 0;
+  top: 20px;
   width: 100%;
 }
 .topnav a {
@@ -31,13 +42,7 @@
   background-color: rgba(192, 218, 116, .2);
   color: white;
 }
-#logo {
-  float: left;
-  display: inline-block;
-  width: 35%;
-  height: auto;
-  padding-right: 20px;
-}
+
 
 /* -------------------------------- PREPARE -------------------------------- */
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
