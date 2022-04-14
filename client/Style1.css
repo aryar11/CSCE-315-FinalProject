@@ -22,6 +22,7 @@
   padding: 10px 10px;
   text-decoration: none;
   font-size: 20px;
+  margin: 25px;
 }
 .topnav a:hover {
   background-color: rgba(203, 75, 0, .5);
@@ -37,6 +38,7 @@
   width: 35%;
   height: auto;
   margin: 20px;
+  margin-right: 400px;
 }
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
 /* The side navigation menu */
@@ -83,10 +85,10 @@ form.planner {
 div.form-button {
   text-align: center;
   padding: 10px;
-  background-color: rgba(124, 142, 75, .75);
+  background-color: rgb(192, 218, 116);
 }
 
-button {
+button. {
   border: none;
   color: white;
   background-color: rgb(192, 218, 116);
@@ -95,7 +97,6 @@ button {
   font-size: 20px;
   margin: 50px;
   display: inline-block;
-
 }
 
 
@@ -186,10 +187,16 @@ h1 {
   font-family: Poppins, sans-serif;
 }
 
+h1.home {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
 h2 {
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
 }
+
 h2.Prepare{
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;

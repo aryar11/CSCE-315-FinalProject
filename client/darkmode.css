@@ -13,19 +13,18 @@
   float: left;
   display: inline-block;
   width: 35%;
-  height: 10%;
+  height: auto;
   margin: 20px;
-  top: 0px;
-  margin-right: 450px;
+  /* top: 0px; */
+  margin-right: 275px;
 }
 
 .topnav {
   background-color: rgb(16, 17, 22);
   overflow: hidden;
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100%;
-  margin: 20px;
 }
 .topnav a {
   float: left;
@@ -34,6 +33,7 @@
   padding: 10px 10px;
   text-decoration: none;
   font-size: 30px;
+  margin: 25px;
 }
 .topnav a:hover {
   background-color: rgba(192, 218, 116, .5);
