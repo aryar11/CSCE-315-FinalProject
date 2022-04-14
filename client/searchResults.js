@@ -1,11 +1,13 @@
 const searchButton = document.getElementById('searchButton');
 searchButton.addEventListener("click", getParks);
+let count = 0;
 
 function getParks(){
     const resultsDiv = document.getElementById('results')
     console.log(resultsDiv);
     if(resultsDiv != null){
         resultsDiv.remove();
+        count = 0
     }
     fetch('https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu')
         .then(response => response.json())
@@ -15,7 +17,6 @@ function getParks(){
 const searchResults = document.getElementById('autocomplete');
 let userIn = "";
 searchResults.addEventListener('keyup', (e) => {
-    console.log(e.target.value);
     userIn = e.target.value;
 });
 
@@ -24,29 +25,61 @@ showParks = parks => {
     const resultsDiv = document.createElement('div');
     resultsDiv.setAttribute("id", "results");
     parksDiv.append(resultsDiv);
+    
+    let splitCity = userIn.split(",");
+    let stateVal;
+    console.log(splitCity);
+    if(userIn.search(',') != -1){
+        if(userIn.search(',') == 2){
+            stateVal = splitCity[0].trim();
+        }else{
+            if((splitCity.length == 2) && splitCity[0].length != 2){ //just state
+                for(i = 0; i < statesCon.length; i++){
+                    if(statesCon[i][0] == splitCity[0]){
+                        stateVal = statesCon[i][1];
+                    }
+                }
+            }else{
+                stateVal = splitCity[1].trim();
+            }
+        }
+    }
+    else{
+        if(splitCity[0].length != 2){
+            for(i = 0; i < statesCon.length; i++){
+                if(statesCon[i][0] == splitCity[0]){
+                    stateVal = statesCon[i][1];
+                }
+            }
+        }else{
+            stateVal = userIn;
+        }
+    }
+
     parks.forEach(park => {
-      const parkElement = document.createElement('p');
-      parkElement.innerText = `Park Name: ${park.fullName}`;
-     //console.log(park.states == userIn);
-      if(park.states == userIn){
-          console.log(park.states);
-          resultsDiv.append(parkElement);
-      }
+        const parkDiv = document.createElement('div');
+        const parkElement = document.createElement('h2');
+        //parkElement.innerText = `Park Name: ${park.fullName}`;
+        const parkImg = document.createElement('img');
+        /*console.log(park.images[0].url);
+        parkImg.setAttribute("src", "${park.images[0].url}");
+        parkDiv.append(parkElement);
+        parkDiv.append(parkImg);*/
+        if(park.states == stateVal){
+            parkElement.innerText = `Park Name: ${park.fullName}`;
+            //console.log(park.images[0].url);
+            parkImg.setAttribute("src", `${park.images[0].url}`);
+            parkImg.setAttribute("width", "200px");
+            parkImg.setAttribute("height", "auto");
+            //console.log(parkImg);
+            parkDiv.append(parkElement);
+            parkDiv.append(parkImg);
+            //console.log(count);
+            parkDiv.setAttribute("id", `${park.fullName}`);
+            resultsDiv.append(parkDiv);
+        }
     });
 }
-
-
-/*const searchResults = document.getElementById('autocomplete');
-const parksList = document.getElementById('parksList');
-
-let userIn = "";
-let parksArr = [];
-searchResults.addEventListener('keyup', (e) => {
-    console.log(e.target.value);
-    userIn = e.target.value;
-    console.log(userIn);
-    loadParks();
-});
 
 const statesCon = [
     ['Arizona', 'AZ'],
@@ -100,61 +133,3 @@ const statesCon = [
     ['Wisconsin', 'WI'],
     ['Wyoming', 'WY'],
 ];
-
-const loadParks = async() => {
-    try{
-        //console.log("here")
-        const res = await fetch('https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu');
-        let parks = await res.json();
-        //displayParks(parks);
-        let splitCity = userIn.split(",");;
-        let stateVal;
-        if(userIn.search(',') != -1){
-            //console.log(userIn.search(','));
-            if(userIn.search(',') == 2){
-                stateVal = splitCity[0].trim();
-            }else{
-                if(splitCity.length == 2 && splitCity[0].length != 2){
-                    for(i = 0; i < statesCon.length; i++){
-                        if(statesCon[i][0] == splitCity[0]){
-                            stateVal = statesCon[i][1];
-                        }
-                    }
-                }else{
-                    stateVal = splitCity[1].trim();
-                }
-            }
-        }
-        else{
-            if(splitCity[0].length != 2){
-                for(i = 0; i < statesCon.length; i++){
-                    if(statesCon[i][0] == splitCity[0]){
-                        stateVal = statesCon[i][1];
-                    }
-                }
-            }else{
-                stateVal = userIn;
-            }
-        }
-        for (let i = 0; i < parks.data.length; i++){
-            if(parks.data[i].states == stateVal){
-                console.log(parks.data[i]);
-                displayParks(parks.data[i]);
-            }
-        }
-    }
-    catch(err){
-        console.error(err);
-    }
-};
-
-displayParks = parks => {
-    const parksDiv = document.querySelector('#parksList');
-    parks.forEach(park =>{
-        const parkElement = document.createElement('p');
-        parkElement.innerText = 'Park Name: ${parks.data.fullName}';
-        parksDiv.append(parkElement);
-    });
-}*/
-
-
