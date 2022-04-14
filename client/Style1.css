@@ -88,18 +88,43 @@ div.form-button {
   background-color: rgb(192, 218, 116);
 }
 
-button. {
+button {
   border: none;
   color: white;
   background-color: rgb(192, 218, 116);
-  width: 50%;
   height: 50px;
+  width: 20%;
   font-size: 20px;
-  margin: 50px;
   display: inline-block;
 }
 
+.homeSearch {
+  width: 50%;
+  /* top: 50%;
+  left: 50%; */
+  /* justify-content: center;
+  align-items: center; */
+}
 
+.searchB {
+  height: 50px;
+  margin: 20px;
+  width: 50%;
+}
+
+ input.searchBar {
+   margin: 50px;
+   margin-bottom: 225px;
+   padding: 10px;
+   width: 50%;
+   height: 50%;
+   border: none;
+ }
+
+/* Trying to get no border on the search bar */
+ input:focus{
+   border: none;
+ }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
@@ -185,6 +210,8 @@ h1 {
   color: rgb(43, 58, 103);
   text-align: center;
   font-family: Poppins, sans-serif;
+  margin-top: 100px;
+  margin-bottom: 40px;
 }
 
 h1.home {
