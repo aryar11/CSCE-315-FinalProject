@@ -70,7 +70,26 @@ function displayParkInformation(data){
         li.innerText = item;
         list.appendChild(li);
       })
+    
+    /*
+    Grabbing the first two images from API reponse
+    */
+    const img1 = document.createElement("img");
+    img1.src= data.images[1].url; //image 1
+    img1.width="500" 
+    img1.height="400"
+
+    const img2 = document.createElement("img");
+    img2.src= data.images[0].url; //image 2
+    img2.width="500" 
+    img2.height="400"
+
+    var src = document.getElementById("parkImages");
+    src.appendChild(img1); //adding the image to the page
+    src.appendChild(img2);
 }
+
+
 /*
 //USING FOR DEBUGGING
 const request = require('request');
