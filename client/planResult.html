@@ -47,10 +47,14 @@
 
   <div id="Overview" class="tabcontent">
     <script>  </script>
-    <h3>Park Overview</h3>
+    <h3>We picked out...</h3>
     <div id="parkName"></div>
     <div id="parkOverview"></div>
-    <div id = "activities"></div>
+    <div id ="act">
+      Activites in Park:
+      <ul class="list-group" id ="activities">
+      <!--JavaScript will add items-->
+      </ul></div>
     <div id="parkImages" ></div>
 
   </div>
@@ -95,7 +99,7 @@
    
 
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&stateCode=TX" /*+ state.toString()*/, false ); // false for synchronous request
+    xmlHttp.open( "GET", "https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&stateCode=" + state.toString(), false ); // false for synchronous request
     xmlHttp.send( null );
     var response = jQuery.parseJSON(xmlHttp.responseText);
     
