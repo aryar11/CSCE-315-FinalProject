@@ -106,6 +106,10 @@ button {
   align-items: center; */
 }
 
+.tablink {
+  margin-top: 100px;
+}
+
 .searchB {
   height: 50px;
   margin: 20px;
