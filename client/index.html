@@ -8,6 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">  <link rel="stylesheet" type="text/css" href="css/Style1.css"></link>
   <link rel="stylesheet" type="text/css" media="screen" href="darkmode.css" />
+  <!-- <script>
+    function switchTheme() {
+      var theme = document.getElementsByTagName('link')[0];
+      if(theme.geAttribute('href') == 'darkmode.css') {theme.setAttribute('href', 'Style1.css');}
+      else {theme.setAttribute('href','darkmode.css');}
+    }
+  </script> -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <script src="/socket.io/socket.io.js"></script>
   <script src="functions.js"></script>
@@ -22,6 +29,7 @@
 </head>
 
 <body>
+  <!-- <button onclick="switchTheme()">Switch</button> -->
   <main>
     <section>
       <h1 class="home"><center>Take the work out of planning, and just be a Happy Camper</center></h1>
@@ -34,24 +42,24 @@
     <section id = "Planning">
       <div class="content">
         <h2>Make planning a walk in the park</h2>
-        <p>Tell us where you want to go and what you want to do.<br>
-          We help you create an itinerary and packing list. </p>
+        <p class="home">Tell us where you want to go and what you want to do.<br>
+          We help you create an itinerary and packing list. </p class="home">
         <a href="plan.html">Plan Your Next Adventure</a>
       </div>
     </section>
     <section id = "Search">
       <div class="content">
         <h2>It's time to explore</h2>
-        <p>The world is wide and there's a lot to see.<br>
-          We make searching for the perfect park easy. </p>
+        <p class="home">The world is wide and there's a lot to see.<br>
+          We make searching for the perfect park easy. </p class="home">
         <a href="search.html">Explore Around You</a>
       </div>
     </section>
     <section id = "Learning">
       <div class="content">
         <h2>It can get wild out there</h2>
-        <p>Be prepared and know first aid and how to contact EMS services.<br>
-          We provide resources to help keep you safe on your trip. </p>
+        <p class="home">Be prepared and know first aid and how to contact EMS services.<br>
+          We provide resources to help keep you safe on your trip. </p class="home">
         <a href="safety.html">Be Prepared for the Wild</a>
       </div>
     </section>

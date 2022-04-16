@@ -234,7 +234,18 @@ h2.Prepare{
   margin-top: 120px;
 }
 
+h3 {
+  color: rgb(124, 142, 75);
+  font-family: Poppins, sans-serif;
+  30px;
+}
+
 p {
+  font-family: Poppins, sans-serif;
+  /* set font size */
+}
+
+p.home {
   font-family: Poppins, sans-serif;
 }
 
@@ -263,5 +274,3 @@ div.search {
 .search input {
   size: 50;
 }
-
-
