@@ -10,7 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.14.0",
     "axios": "^0.21.4",
     "express": "^4.16.3",
     "node-fetch": "^3.2.3",

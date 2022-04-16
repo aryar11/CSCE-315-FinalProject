@@ -65,11 +65,12 @@ function displayParkInformation(data){
             activities.push(act[i].name);
     }
     let list = document.getElementById("activities");
+    var i = 0;
     activities.forEach((item)=>{
         let li = document.createElement("li");
         li.innerText = item;
         list.appendChild(li);
-      })
+    })
     
     /*
     Grabbing the first two images from API reponse
@@ -88,6 +89,7 @@ function displayParkInformation(data){
     src.appendChild(img1); //adding the image to the page
     src.appendChild(img2);
 }
+
 
 
 /*
