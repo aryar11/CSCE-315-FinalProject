@@ -6,141 +6,131 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Happy Camper</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">  <link rel="stylesheet" type="text/css" href="css/Style1.css"></link>
-  <link rel="stylesheet" type="text/css" media="screen" href="Style1.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" id="theme" type="text/css" media="screen" href="Style1.css" />
+  <span id="styleType"></span>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-  <script src="/socket.io/socket.io.js"></script>
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
   <link rel="icon" href="img/favicon.png">
-  <div>
-    <link id = "theme" rel="stylesheet" type="text/css" href="Style1.css"></link>
-  </div>
+  <script src="js/switchStyles.js"></script>
 
   <!-- <script src="/socket.io/socket.io.js"></script> -->
-  <section>
     <div class="topnav">
       <img src= img/happycamper.png id = "logo">
       <a href="index.html">Home</a>
       <a href="plan.html">Plan</a>
       <a href="search.html">Explore</a>
       <a class = "active" href="safety.html">Prepare</a>
-  </div>
+    </div>
 </head>
 
 <body>
   <main>
     <h1>Be Prepared for the Wild</h1>
-    <section>
       <div class="sidebar">
-        <a href="#BasicFA">Basic First Aid</a>
-        <a href="#WildFA">Wilderness First Aid</a>
-        <a href="#Wildlife">Wildlife</a>
-        <a href="#EMS">EMS</a>
+        <a href="#BasicFA">First Aid</a>
+        <a href="#WildFA">Common Injuries</a>
+        <a href="#Wildlife">Plant and Wildlife</a>
+        <a href="#EMS">Preparing for Emergencies</a>
+        <button class="styleSwitch" onclick="switchStyles()"></button>
       </div>
 
       <!-- Page content -->
       <section id = "BasicFA">
       <div class="content">
-        <h2>Basic First Aid</h2>
-        This text is the area for the Basic First Aid Section.
+        <h2 class = "Prepare">First Aid</h2>
+        <p>The first aid kit is the most important piece of equipment you will be needing when you go out camping, so it's vital that you know what to pack and how to use it. Here's a couple of things to look for when you are either buying a first aid kit or building your own first aid kit:</p>
+
+        <p>
+        - Antiseptic wipes and Gauze
+        <br>- Bandages of different types (i.e. butterfly bandages, triangular bandages)
+        <br>- Finger and SAM splints
+        <br>- Sunburn relief gel/spray
+        <br>- Prescription medications
+        <br>- Knife
+        <br>- Thermometer
+        <br>- Hand sanitizer
+        <br>- Cotton-tipped swabs
+        </p>
+
+        <p>This is a very limited list of items that is only meant to be an example of what to look for in a first aid kit.
+        Click this Link to see a more detailed list of what to bring if you are still unsure on what exactly goes into a first aid kit: <a href = "https://www.rei.com/learn/expert-advice/first-aid-checklist.html" target="_blank">First-Aid-Checklist</a></p>
+
+        <p>Remember, it's always better to over pack first aid materials than to underpack them!</p>
+
       </div>
       </section>
       <section id = "WildFA">
       <div class="content">
-        <h2>Wilderness First Aid</h2>
-        This text is the area for the Wilderness First Aid Section.
+        <h2 class = "Prepare">Common Injuries</h2>
+        <p>A lot of fun and exciting things can happen to you when you go camping! But there are also some things that can be potentially dangerous if you don't watch out for them. Here's a quick list of things to do to ensure a fun and safe camping trip!</p>
+
+        <br><h3>Hydrate, Hydrate, Hydrate!</h3>
+
+        <p>Drinking water on a regular basis is a must when you are camping. Not drinking water regularly can lead to dehydration, and can even cause heat stroke in extreme cases. Make sure you stay hydrated!</p>
+
+        <br><h3>Eat Regularly!</h3>
+
+        <p>Having consistent meals throughout the day will give you the energy needed to do whatever you want to do on your camping trip. Creating a meal plan for your trip is an excellent way to ensure you get the nutrients needed to continue on with your trip. After all, no one wants to camp on an empty stomach!</p>
+
+        <br><h3>Apply Sunscreen!</h3>
+
+        <p>You're about to embark on a trip that requires you to be out in the sun for the entire day. Needless to say, getting a sunburn is a real threat and would be quite the pain to deal with for the remainder of your trip. Applying Sunscreen every couple of hours is a must if you want to continue enjoying your trip!</p>
+
+        <br><h3>Wash your Hands and Clothes!</h3>
+
+        <p>This may be a no-brainer, but it's important to note the value of washing your hands on a regular basis. You will get bacteria and germs on your hands as you go about your day, and you can get very sick if you don't wash your hands. Washing your clothes will also help get rid of anything that might have stuck onto your clothes while you were out and about. For example, you might have brushed against some Poison Ivy while hiking and got some of your pants, so washing your clothes will help get rid of the Poison Ivy and prevent you from getting a Poison Ivy Rash!</p>
+
+        <p>For more information on common injuries and how to best prevent them, check out this website: <a href = "https://www.adventureincamping.com/blog/common-injuries-and-illnesses-to-prepare-for-when-camping/" target="_blank">Common Injuries and Illnesses</a></p>
       </div>
       </section>
       <section id = "Wildlife">
       <div class="content">
-        <h2>Wildlife</h2>
-        This text is the area for the Wildlife Section.
+        <h2 class = "Prepare">Plant and Wildlife</h2>
+        <p>One of the greatest experiences you can find when enjoying the outdoors is... well, the outdoors! Being able to sit back and watch nature doing its thing is relaxing, to say the least, but there are some things that you need to know about the wildlife you'll encounter before you take a venture into the outdoors.
+
+        <br><h3>Research the park you'll be visiting for information about the local plant and wildlife!</h3>
+
+        <p>While there are many plants and animals that can be found at any park you go to (i.e. <a href = "https://www.mayoclinic.org/diseases-conditions/poison-ivy/diagnosis-treatment/drc-20376490" target="_blank">Poison Ivy</a> and <a href = "https://www.hopkinsmedicine.org/health/conditions-and-diseases/snake-bites" target="_blank">Snakes</a>), knowing what exactly you'll encounter when you camp out at a specific park will do wonders for helping you prepare accordingly. There might be some plants or animals that members of your camping crew are allergic to. There might even be some wildlife there that you've never seen before, and now you can keep an eye out for them when you go on your trails! Knowing what's out there is a great way to keep you and those around you safe from the environment while enjoying the outdoors!</p>
+
+        <br><h3>Cover yourself!</h3>
+
+        <p>You may know everything about the plant and wildlife at the park you're visiting; however, you can still accidentally come into contact with dangerous plants and animals. Wearing long pants and close-toed shoes will help ensure that you don't brush against some poisonous plants or receive any bug bites while on your hike and help prevent scrapes against your legs. Wearing bug spray is also an excellent way to prevent bug bites!</p>
+
+        <br><h3>Stick to Trails whenever possible!</h3>
+
+        <p>Staying on the well-established <a href = "https://lnt.org/" target="_blank">trails</a> is one of the most effective ways to experience the outdoors in a safe and fun way. The park trials will let you see very clearly what you are about to step on and give you a clear path to walk through.</p>
+
+        <p>These are just a few tips that will help you prepare for the wildlife!</p>
       </div>
       </section>
       <section id = "EMS">
       <div class="content">
-        <h2>EMS</h2>
-        This text is the area for the EMS Section.
+        <h2 class = "Prepare">Preparing for Emergencies</h2>
+        <p>While it's not a fun thing to think about, going camping means that there is always a small risk of running into some kind of emergency while out in the wilderness. It's important to understand how to react and what to do when encountering this kind of situation.</p>
+
+        <br><h3>Have Emergency Contacts saved on your phone!</h3>
+
+        <p>Calling 911 might take too long in an emergency, so it's vital to look up the park's phone number and save it on your phone. This will let you be able to contact the park workers in case of an emergency and let them track where you are so they can respond quickly. Calling both will help ensure that the person injured or the emergency can be dealt with as quickly as possible. It's also noteworthy to mention that you should always have a way to quickly contact others. Your phone service might not work out in the wilderness, so consider getting something like a satellite phone to ensure you can contact emergency services.</p>
+
+        <br><h3>Remain Calm!</h3>
+
+          <p>This can be pretty tough to do, however, staying calm and composed will let you be able to think clearly and allow you to do what you need to do to get through the situation. Being calm will let you apply first aid and contact emergency services in a quick manner.</p>
+
+        <br><h3>Assess the Situation!</h3>
+
+          <p>When encountering an emergency situation with someone injured, it's important to stop first and observe the surroundings. Make sure that the area is safe before you go in and assist the injured. For example, if someone was hurt in a landslide, make sure the landslide is over and that no more debris is coming down lest you get hit by the landslide too. The last thing you want to happen is that you get injured and get put in the same situation as those you were trying to help. Make sure that the injured are in a safe area to be treated as well. Move them if necessary and if their injuries aren't too serious.</p>
+
+        <br><h3>Apply First Aid!</h3>
+
+        <p>Only after you assess the situation and have contacted emergency services should you move on to treat the injured with your first aid kit. Ensure that you don't do anything you are not confident in.
+        Here is a link that lets you know the best way to prepare for and execute first aid treatment: <a href = "https://www.rei.com/learn/expert-advice/wilderness-first-aid-basics.html" target="_blank">Wilderness-First-Aid-Basics</a></p>
       </div>
       </section>
-    </section>
     <div>
     </div>
   </main>
-  <script src="main.js"></script>
+  <!-- <script src="main.js"></script> -->
 </body>
 
 </html>
-=======
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Happy Campers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">  <link rel="stylesheet" type="text/css" href="css/Style1.css"></link>
-  <link rel="stylesheet" type="text/css" media="screen" href="Style1.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-  <script src="/socket.io/socket.io.js"></script>
-  <link rel="icon" href="img/favicon.png">
-  <div>
-    <link id = "theme" rel="stylesheet" type="text/css" href="Style1.css"></link>
-  </div>
-
-  <!-- <script src="/socket.io/socket.io.js"></script> -->
-  <section>
-    <div class="topnav">
-      <img src= img/happycamper.png id = "logo">
-      <a href="index.html">Home</a>
-      <a href="plan.html">Plan</a>
-      <a href="search.html">Explore</a>
-      <a class = "active" href="safety.html">Prepare</a>
-  </div>
-</head>
-
-<body>
-  <main>
-    <h1>Be Prepared for the Wild</h1>
-    <section>
-      <div class="sidebar">
-        <a href="#BasicFA">Basic First Aid</a>
-        <a href="#WildFA">Wilderness First Aid</a>
-        <a href="#Wildlife">Wildlife</a>
-        <a href="#EMS">EMS</a>
-      </div>
-
-      <!-- Page content -->
-      <section id = "BasicFA">
-      <div class="content">
-        <h2 class = "Prepare">Basic First Aid</h2>
-        This text is the area for the Basic First Aid Section.
-      </div>
-      </section>
-      <section id = "WildFA">
-      <div class="content">
-        <h2 class = "Prepare">Wilderness First Aid</h2>
-        This text is the area for the Wilderness First Aid Section.
-      </div>
-      </section>
-      <section id = "Wildlife">
-      <div class="content">
-        <h2 class = "Prepare">Wildlife</h2>
-        This text is the area for the Wildlife Section.
-      </div>
-      </section>
-      <section id = "EMS">
-      <div class="content">
-        <h2 class = "Prepare">EMS</h2>
-        This text is the area for the EMS Section.
-      </div>
-      </section>
-    </section>
-    <div>
-    </div>
-  </main>
-  <script src="main.js"></script>
-</body>
-
-</html>
->>>>>>> 8c4913e961e04089413b7930debef23dce12792f

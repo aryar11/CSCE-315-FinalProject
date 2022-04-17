@@ -7,10 +7,13 @@
   <title>Happy Camper</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">  <link rel="stylesheet" type="text/css" href="css/Style1.css"></link>
-  <link rel="stylesheet" type="text/css" media="screen" href="darkmode.css" />
+  <link rel="stylesheet" id="theme" type="text/css" media="screen" href="Style1.css" />
+  <span id="styleType"></span>
+  <span id="logoType"></span>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <script src="/socket.io/socket.io.js"></script>
-  <script src="functions.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/switchStyles.js"></script>
   <link rel="icon" href="img/favicon.png">
   <div class="topnav">
     <img src= img/happycamper.png id = "logo">
@@ -22,48 +25,42 @@
 </head>
 
 <body>
+
   <main>
+    <button class="styleSwitch" onclick="switchStyles()"></button>
     <section>
-    <h1 class="home"><center>Take the work out of planning, and just be a Happy Camper</center></h1>
-    <div class="search">
-        <button type="submit" onclick="window.open('search.html','_self')">Find a Park</button>
-    </div>
+      <h1 class="home"><center>Take the work out of planning, and just be a Happy Camper</center></h1>
+      <div>
+          <center><button type="submit" onclick="window.open('search.html','_self')">Find a Park</button></center>
+      </div>
     </section>
 
     <!-- Page Content -->
     <section id = "Planning">
       <div class="content">
         <h2>Make planning a walk in the park</h2>
-        <p>Tell us where you want to go and what you want to do.<br>
-          We help you create an itinerary and packing list. </p>
+        <p class="home">Tell us where you want to go and what you want to do.<br>
+          We help you create an itinerary and packing list. </p class="home">
         <a href="plan.html">Plan Your Next Adventure</a>
       </div>
     </section>
     <section id = "Search">
       <div class="content">
         <h2>It's time to explore</h2>
-        <p>The world is wide and there's a lot to see.<br>
-          We make searching for the perfect park easy. </p>
+        <p class="home">The world is wide and there's a lot to see.<br>
+          We make searching for the perfect park easy. </p class="home">
         <a href="search.html">Explore Around You</a>
       </div>
     </section>
     <section id = "Learning">
       <div class="content">
         <h2>It can get wild out there</h2>
-        <p>Be prepared and know first aid and how to contact EMS services.<br>
-          We provide resources to help keep you safe on your trip. </p>
+        <p class="home">Be prepared and know first aid and how to contact EMS services.<br>
+          We provide resources to help keep you safe on your trip. </p class="home">
         <a href="safety.html">Be Prepared for the Wild</a>
       </div>
     </section>
-
-<!-- playing around with api -->
-    <!-- <div id="npsinfo">
-        <button type = "button" type="submit" onclick="generateParkInfo()">Test API</button>
-    </div> -->
-
-<!-- end playing around with api -->
   </main>
-  <script src="main.js"></script>
 </body>
 
 </html>
