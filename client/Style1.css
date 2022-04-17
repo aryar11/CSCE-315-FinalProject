@@ -317,3 +317,27 @@ div.search {
   height: 500px;
   width: 40%;
 }
+#BasicFA {
+  background: url('FirstAid.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* can use either cover or contain. contain leaves some blank space between sections */
+  margin-left: 200px;
+}
+#Wildlife{
+  background: url('Wildlife.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 200px;
+}
+#EMS{
+  background: url('Prepare4EMS.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 200px;
+}
+#WildFA{
+  background: url('CommonInj.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /*using contain on this does not cover the entire section. */
+  margin-left: 200px;
+}
