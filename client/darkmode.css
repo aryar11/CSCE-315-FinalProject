@@ -315,3 +315,8 @@ div.search {
 .search input {
   size: 50;
 }
+
+#map{
+  height: 200px;
+  width: 50%;
+}
