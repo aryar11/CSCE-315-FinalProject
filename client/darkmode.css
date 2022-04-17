@@ -320,10 +320,11 @@ div.search {
   height: 200px;
   width: 50%;
 }
+/* Comment Pics out for Presentation
 #BasicFA {
   background: url('FirstAid.jpg');
   background-repeat: no-repeat;
-  background-size: cover; /* can use either cover or contain. contain leaves some blank space between sections */
+  background-size: cover; /* can use either cover or contain. contain leaves some blank space between sections 
   margin-left: 200px;
 }
 #Wildlife{
@@ -341,6 +342,7 @@ div.search {
 #WildFA{
   background: url('CommonInj.jpg');
   background-repeat: no-repeat;
-  background-size: cover; /*using contain on this does not cover the entire section. */
+  background-size: cover; /*using contain on this does not cover the entire section. 
   margin-left: 200px;
 }
+*/
