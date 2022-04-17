@@ -1,11 +1,11 @@
 {
-  "name": "js-fundamentals-test",
+  "name": "happycampers",
   "version": "1.0.0",
-  "description": "",
+  "description": "an app to help beginner campers discover the world",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
