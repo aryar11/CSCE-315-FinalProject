@@ -1,13 +1,18 @@
 const searchButton = document.getElementById('searchButton');
 searchButton.addEventListener("click", getParks);
-let count = 0;
+var parkName = "";
+//export{parkName};
+//let count = 0;
+//let parksInResult = [];
 
 function getParks(){
     const resultsDiv = document.getElementById('results')
     console.log(resultsDiv);
     if(resultsDiv != null){
         resultsDiv.remove();
-        count = 0
+        //count = 0
+        //parksInResult = [];
+        parkName = "";
     }
     fetch('https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu')
         .then(response => response.json())
@@ -17,6 +22,7 @@ function getParks(){
 const searchResults = document.getElementById('autocomplete');
 let userIn = "";
 searchResults.addEventListener('keyup', (e) => {
+    //console.log("test");
     userIn = e.target.value;
 });
 
@@ -59,27 +65,36 @@ showParks = parks => {
     parks.forEach(park => {
         const parkDiv = document.createElement('div');
         const parkElement = document.createElement('h2');
-        //parkElement.innerText = `Park Name: ${park.fullName}`;
         const parkImg = document.createElement('img');
-        /*console.log(park.images[0].url);
-        parkImg.setAttribute("src", "${park.images[0].url}");
-        parkDiv.append(parkElement);
-        parkDiv.append(parkImg);*/
+        const pageLink = document.createElement('a');
         if(park.states == stateVal){
             parkElement.innerText = `Park Name: ${park.fullName}`;
-            //console.log(park.images[0].url);
+            pageLink.setAttribute("href", 'http://localhost:4444/'); //have to change this once on heroku
+            pageLink.setAttribute("id", `${park.fullName}`);
+            
+            pageLink.addEventListener("click", function(){
+                parkName = this.id;
+            }, true);
             parkImg.setAttribute("src", `${park.images[0].url}`);
             parkImg.setAttribute("width", "200px");
             parkImg.setAttribute("height", "auto");
-            //console.log(parkImg);
             parkDiv.append(parkElement);
-            parkDiv.append(parkImg);
-            //console.log(count);
+            pageLink.append(parkImg);
+            parkDiv.append(pageLink);
             parkDiv.setAttribute("id", `${park.fullName}`);
             resultsDiv.append(parkDiv);
+            //console.log(count);
+            //count++;
+            //parksInResult.push(park);
+            //console.log(parksInResult);
         }
     });
 }
+
+
+/*$(document).on('click', 'a', function () {
+    alert(this.id);
+});*/
 
 const statesCon = [
     ['Arizona', 'AZ'],
