@@ -63,9 +63,9 @@
 
   <div id="Logistics" class="tabcontent">
     <h3>Logistics</h3>
-    <div id = "admissionFee"></div>
     <div id="map"></div>
-    <p>Map to park, gas prices, campsites</p>
+    <div id="direction"></div>
+    <div id = "admissionFee"><h1>Prices:</h1></div>
   </div>
 
   <div id="Create Itinerary" class="tabcontent">
@@ -113,7 +113,6 @@
     else{
       iteminJSON = getRandomInt(response.limit );
     }
-    displayParkInformation(response.data[iteminJSON]);
 
     //Store lat and long for map
     var varlat = response.data[iteminJSON].latitude;
@@ -122,7 +121,10 @@
 
     var varlong = response.data[iteminJSON].longitude;
     const long = new String(varlong);
-    localStorage.setItem("long", long);
+    localStorage.setItem("long", long);    
+
+    displayParkInformation(response.data[iteminJSON]);
+
 
   </script>
 
