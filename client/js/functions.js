@@ -34,8 +34,7 @@ function saveParkinfo(){
 
     var varBudget = document.getElementById("enterbudget").value; 
     const budget = new String(varBudget);
-    localStorage.setItem("budget", budget);      
-    
+    localStorage.setItem("budget", budget);         
 }
 
 
@@ -49,6 +48,7 @@ function displayParkInformation(data){
     const parkName = data.fullName;
     const heading = document.createElement("h1");
     heading.innerHTML = parkName;
+
     nameDiv.appendChild(heading);
 
     /*
