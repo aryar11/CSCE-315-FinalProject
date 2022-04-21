@@ -306,6 +306,8 @@ a:hover {
   color: rgb(79, 114, 67);
 }
 
+
+
 div.search {
   text-align: center;
   margin-left: auto;
@@ -314,8 +316,8 @@ div.search {
 
 
 #map{
-  height: 500px;
-  width: 40%;
+  height: 550px;
+  width: 35%;
 }
 /* Comment Pics out for Presentation Monday
 #BasicFA {
