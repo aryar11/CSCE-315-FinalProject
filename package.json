@@ -12,20 +12,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-<<<<<<< HEAD
     "express": "^4.17.3",
     "pug": "^3.0.2",
     "request": "^2.88.2",
     "socket.io": "^2.1.1"
-=======
-    "@googlemaps/js-api-loader": "^1.14.0",
-    "axios": "^0.21.4",
-    "express": "^4.16.3",
-    "node-fetch": "^3.2.3",
-    "request": "^2.81.0",
-    "requirejs": "^2.3.6",
-    "socket.io": "^4.4.1",
-    "xhr2": "^0.2.1"
->>>>>>> 8bb71bdcc03a939992aa6d5c327c2185d3c69ee4
   }
 }
