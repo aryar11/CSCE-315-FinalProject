@@ -19,7 +19,7 @@ activitesList = [
     "Birdwatching",
     "Dams",
     "Water Trails",
-    "Waterfalls",
+    "Waterfalls"
 ]
 
 function getRandomInt(max) {
@@ -27,14 +27,30 @@ function getRandomInt(max) {
 }
 
 function saveParkinfo(){
+    /*
+    get name of state
+    */
     var varState = document.getElementById("inputState1").value; 
     const state = new String(varState);
     console.log(state);
     localStorage.setItem("state", state); 
 
+    /* 
+    get their budget
+    */
     var varBudget = document.getElementById("enterbudget").value; 
     const budget = new String(varBudget);
-    localStorage.setItem("budget", budget);         
+    localStorage.setItem("budget", budget);
+    
+    /*
+    get start and end date
+    */
+    var varStartDate =  document.getElementById("startDate").value;
+    var varEndDate =  document.getElementById("endDate").value; 
+    const startDate = new String(varStartDate);
+    const endDate = new String(varEndDate);
+    localStorage.setItem("startDate", startDate); 
+    localStorage.setItem("endDate", endDate); 
 }
 
 
@@ -151,7 +167,51 @@ function displayParkInformation(data){
 }
 
 
+function itenerarySetup(weatherdata, parkdata){
+    const start = localStorage.getItem("startDate");
+    localStorage.removeItem("startDate");
+    const end = localStorage.getItem("endDate");
+    localStorage.removeItem("endDate");
 
+    var startDate = new Date(start.toString());
+    var endDate = new Date(end.toString());
+
+    var diff = new Date(endDate - startDate);
+    var numOfDays = diff.getDate();
+
+    console.log(numOfDays, diff);
+    const tablediv = document.getElementById("itenerary");
+  
+   
+
+  //  const createtable = () => {
+        console.log("test12");
+        var tbl = document.createElement('table');
+        tbl.className = "iteneraryTable";
+        tbl.style.width = '100%';
+
+        let tblHead = document.createElement('thead');
+        tblHead.className = 'iteneraryTableHead';
+
+        let tblHeaderRow = document.createElement('tr');
+        tblHeaderRow.className = 'iteneraryTableHeaderRow';
+
+        for(var i =0 ; i < numOfDays ; i++ ){
+            let day = document.createElement('th');
+            day.innerText = i;
+            tblHeaderRow.append(day);
+        }
+
+        tblHead.append(tblHeaderRow);
+        tbl.append(tblHead);
+        
+        let iteneraryTableBody = document.createElement('tbody');
+        iteneraryTableBody.className = "iteneraryTableBody";
+        tbl.append(iteneraryTableBody);
+        tablediv.append(tbl);
+  //  }
+    
+}
 
 /*
 
