@@ -31,7 +31,6 @@
     <div id = "searchWrapper">
       <input class="searchBar" type="text" id="autocomplete" placeholder="Search By State Or City..." autocomplete="on">
       <br>
-      <!-- TODO: make submit button redirect to searchresults page -->
       <button type="submit" class="searchB" id = "searchButton"><class="fa fa-search">Submit</button>
     </div>
     <div id='parksList'>
@@ -42,6 +41,8 @@
   <script src="export.js"></script>
   <script src="main.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6S6lDX249i90uGLFx1HoA_qUusGzYWDg&libraries=places&callback=initialize" type="text/javascript"></script>
+
+  <div class="pkres"></div>
   <script type="text/javascript">
    function initialize() {
 
