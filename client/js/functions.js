@@ -19,7 +19,34 @@ activitesList = [
     "Birdwatching",
     "Dams",
     "Water Trails",
-    "Waterfalls",
+    "Waterfalls"
+]
+
+hours = [
+    "12 a.m",
+    "1 a.m",
+    "2 a.m",
+    "3 a.m",
+    "4 a.m",
+    "5 a.m",
+    "6 a.m",
+    "7 a.m",
+    "8 a.m",
+    "9 a.m",
+    "10 a.m",
+    "11 a.m",
+    "12 p.m",
+    "1 p.m",
+    "2 p.m",
+    "3 p.m",
+    "4 p.m",
+    "5 p.m",
+    "6 p.m",
+    "7 p.m",
+    "8 p.m",
+    "9 p.m",
+    "10 p.m",
+    "11 p.m"
 ]
 
 function getRandomInt(max) {
@@ -27,15 +54,30 @@ function getRandomInt(max) {
 }
 
 function saveParkinfo(){
+    /*
+    get name of state
+    */
     var varState = document.getElementById("inputState1").value;
     const state = new String(varState);
     console.log(state);
     localStorage.setItem("state", state);
 
+    /*
+    get their budget
+    */
     var varBudget = document.getElementById("enterbudget").value;
     const budget = new String(varBudget);
     localStorage.setItem("budget", budget);
 
+    /*
+    get start and end date
+    */
+    var varStartDate =  document.getElementById("startDate").value;
+    var varEndDate =  document.getElementById("endDate").value;
+    const startDate = new String(varStartDate);
+    const endDate = new String(varEndDate);
+    localStorage.setItem("startDate", startDate);
+    localStorage.setItem("endDate", endDate);
 }
 
 
@@ -49,6 +91,7 @@ function displayParkInformation(data){
     const parkName = data.fullName;
     const heading = document.createElement("div.pkname");
     heading.innerHTML = parkName;
+
     nameDiv.appendChild(heading);
 
     /*
@@ -153,6 +196,76 @@ function displayParkInformation(data){
 
 
 
+function itenerarySetup(weatherdata, parkdata){
+    const start = localStorage.getItem("startDate");
+    localStorage.removeItem("startDate");
+    const end = localStorage.getItem("endDate");
+    localStorage.removeItem("endDate");
+
+    var startDate = new Date(start.toString());
+    var endDate = new Date(end.toString());
+
+    var diff = new Date(endDate - startDate);
+    var numOfDays = diff.getDate();
+
+
+    const tablediv = document.getElementById("itenerary");
+
+    var tbl = document.createElement('table');
+    tbl.className = "iteneraryTable";
+    tbl.style.width = '100%';
+
+    let tblHead = document.createElement('thead');
+    tblHead.className = 'iteneraryTableHead';
+
+    let tblHeaderRow = document.createElement('tr');
+    tblHeaderRow.className = 'iteneraryTableHeaderRow';
+    let hourheader = document.createElement('th');
+    hourheader.innerText = "hour";
+    hourheader.contentEditable = "false";
+    tblHeaderRow.append(hourheader);
+
+
+    for(var i = 0 ; i < numOfDays ; i++ ){
+        let day = document.createElement('th');
+        const dateArray = startDate.toString().split(" ");
+        day.innerText = dateArray[0] + " " + dateArray[1] + " " + dateArray[2] + " " + dateArray[3];
+        day.contentEditable = "false";
+        tblHeaderRow.append(day);
+        startDate.setDate(startDate.getDate() + 1);
+
+    }
+    tblHead.append(tblHeaderRow);
+    tbl.append(tblHead);
+
+    let iteneraryTableBody = document.createElement('tbody');
+    iteneraryTableBody.className = "iteneraryTableBody";
+
+    tbl.append(iteneraryTableBody);
+
+    tablediv.append(tbl);
+
+    /*
+    add body
+    */
+    for(var i = 0; i < 24 ; i++){
+        let tableBodyRow = document.createElement('tr');
+        tableBodyRow.className = "tablebodyrow";
+        let hour = document.createElement('td');
+        hour.innerText = hours[i];
+        hour.contentEditable = "false";
+        tableBodyRow.append(hour);
+        for(var j = 0 ; j < numOfDays ; j++ ){
+            let formInput = document.createElement('td');
+            formInput.innerText = 'Click Here to Build Itinerary';
+            tableBodyRow.append(formInput);
+        }
+        iteneraryTableBody.append(tableBodyRow);
+    }
+
+
+
+}
 
 /*
 

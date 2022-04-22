@@ -1,20 +1,17 @@
 const searchButton = document.getElementById('searchButton');
 searchButton.addEventListener("click", getParks);
 var parkName = "";
-//export{parkName};
-//let count = 0;
-//let parksInResult = [];
+let count = 0;
 
 function getParks(){
     const resultsDiv = document.getElementById('results')
-    console.log(resultsDiv);
+    //console.log(resultsDiv);
     if(resultsDiv != null){
         resultsDiv.remove();
-        //count = 0
-        //parksInResult = [];
+        count = 0;
         parkName = "";
     }
-    fetch('https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu')
+    fetch('https://developer.nps.gov/api/v1/parks?q=camping&limit=466&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu')
         .then(response => response.json())
         .then(parks => showParks(parks.data));
 }
@@ -22,7 +19,6 @@ function getParks(){
 const searchResults = document.getElementById('autocomplete');
 let userIn = "";
 searchResults.addEventListener('keyup', (e) => {
-    //console.log("test");
     userIn = e.target.value;
 });
 
@@ -69,11 +65,17 @@ showParks = parks => {
         const pageLink = document.createElement('a');
         if(park.states == stateVal){
             parkElement.innerText = `Park Name: ${park.fullName}`;
-            pageLink.setAttribute("href", 'http://localhost:4444/'); //have to change this once on heroku
+            pageLink.setAttribute("href", '#'); //have to change this once on heroku
             pageLink.setAttribute("id", `${park.fullName}`);
-            
+            pageLink.setAttribute("title", count);
+            pageLink.setAttribute("onclick", "loadPage(); return false;");
+            //pageLink.setAttribute("onload", "generatePage();");
             pageLink.addEventListener("click", function(){
                 parkName = this.id;
+                let start = this.title;
+                console.log(start);
+                localStorage.setItem('parkNameVal', parkName);
+                localStorage.setItem('startVal', start);
             }, true);
             parkImg.setAttribute("src", `${park.images[0].url}`);
             parkImg.setAttribute("width", "200px");
@@ -83,18 +85,14 @@ showParks = parks => {
             parkDiv.append(pageLink);
             parkDiv.setAttribute("id", `${park.fullName}`);
             resultsDiv.append(parkDiv);
-            //console.log(count);
-            //count++;
-            //parksInResult.push(park);
-            //console.log(parksInResult);
         }
+        count++;
     });
 }
 
-
-/*$(document).on('click', 'a', function () {
-    alert(this.id);
-});*/
+function loadPage(){
+    window.location.href = "searchResult.html";
+}
 
 const statesCon = [
     ['Arizona', 'AZ'],

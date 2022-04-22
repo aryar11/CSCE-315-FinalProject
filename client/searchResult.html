@@ -35,5 +35,26 @@
   </main>
 </body>
 <script src="searchResults.js"></script>
-<script src="test.js"></script>
+<script type="text/javascript">
+  let nameOfPark = localStorage.getItem('parkNameVal');
+  let start = localStorage.getItem('startVal');
+  console.log(start);
+  let callStr = 'https://developer.nps.gov/api/v1/parks?q=camping&limit=1&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&start=' + start;
+  console.log(callStr)
+  fetch(callStr)
+        .then(response => response.json())
+        .then(parks => showParkInfo(parks.data))
+  
+  showParkInfo = parks => {
+    parks.forEach(park => {
+      const parkDiv = document.querySelector('#clickResult');
+      const infoDiv = document.createElement('div');
+      infoDiv.setAttribute("id", "result"); //ID for styling
+      const parkNamePage = document.createElement('h2');
+      parkNamePage.innerText = `${park.fullName}`;
+      infoDiv.append(parkNamePage);
+      parkDiv.append(infoDiv);
+    });
+  }
+</script>
 </html>
