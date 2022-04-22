@@ -130,7 +130,7 @@ button.styleSwitch {
 
  input.searchBar {
    margin: 100px;
-   margin-bottom: 225px;
+   margin-bottom: 175px;
    padding: 10px;
    width: 50%;
    height: 50%;
@@ -399,5 +399,18 @@ div.pkact {
    margin-left: 200px;
    color: rgb(43, 58, 103);
    font-size: 20px;
-
  }
+
+ h2.pk {
+   font-size: 30px;
+ }
+
+div.pkpics {  //might need to change so they're img's
+  margin-left: 200px;
+  margin: 25px;
+}
+
+div.pkres {
+  /* finishing making a pkres div, need to edit results, put pics next to text */
+
+}
