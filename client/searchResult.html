@@ -35,5 +35,18 @@
   </main>
 </body>
 <script src="searchResults.js"></script>
-<script src="test.js"></script>
+<script type="text/javascript">
+  console.log("test");
+  const parkDiv = document.querySelector('#clickResult');
+  console.log(parkDiv);
+  let nameOfPark = localStorage.getItem('parkNameVal');
+  console.log(nameOfPark);
+  const infoDiv = document.createElement('div');
+  console.log(infoDiv);
+  const parkNamePage = document.createElement('h2');
+  let title = "Park Name: ";
+  parkNamePage.innerText = title.concat(nameOfPark);
+  infoDiv.append(parkNamePage);
+  parkDiv.append(infoDiv);
+</script>
 </html>
