@@ -182,34 +182,57 @@ function itenerarySetup(weatherdata, parkdata){
     console.log(numOfDays, diff);
     const tablediv = document.getElementById("itenerary");
   
-   
+    var tbl = document.createElement('table');
+    tbl.className = "iteneraryTable";
+    tbl.style.width = '100%';
 
-  //  const createtable = () => {
-        console.log("test12");
-        var tbl = document.createElement('table');
-        tbl.className = "iteneraryTable";
-        tbl.style.width = '100%';
+    let tblHead = document.createElement('thead');
+    tblHead.className = 'iteneraryTableHead';
 
-        let tblHead = document.createElement('thead');
-        tblHead.className = 'iteneraryTableHead';
+    let tblHeaderRow = document.createElement('tr');
+    tblHeaderRow.className = 'iteneraryTableHeaderRow';
+    let hourheader = document.createElement('th');
+    hourheader.innerText = "hour";
+    hourheader.contentEditable = "false";
+    tblHeaderRow.append(hourheader);
 
-        let tblHeaderRow = document.createElement('tr');
-        tblHeaderRow.className = 'iteneraryTableHeaderRow';
 
-        for(var i =0 ; i < numOfDays ; i++ ){
-            let day = document.createElement('th');
-            day.innerText = i;
-            tblHeaderRow.append(day);
+    for(var i =0 ; i < numOfDays ; i++ ){
+        let day = document.createElement('th');
+        day.innerText = i;
+        day.contentEditable = "false";
+        tblHeaderRow.append(day);
+    }
+    tblHead.append(tblHeaderRow);
+    tbl.append(tblHead);    
+    
+    let iteneraryTableBody = document.createElement('tbody');
+    iteneraryTableBody.className = "iteneraryTableBody";
+
+    tbl.append(iteneraryTableBody);
+
+    tablediv.append(tbl);
+
+    /*
+    add body
+    */
+
+    for(var i = 0; i < 24 ; i++){
+        let tableBodyRow = document.createElement('tr');
+        tableBodyRow.className = "tablebodyrow";
+        let hour = document.createElement('td');
+        hour.innerText = i*100;
+        hour.contentEditable = "false";
+        tableBodyRow.append(hour);   
+        for(var j = 0 ; j < numOfDays ; j++ ){
+            let formInput = document.createElement('td');
+            formInput.innerText = 'Click Here to Build Itinerary';
+            tableBodyRow.append(formInput); 
         }
+        iteneraryTableBody.append(tableBodyRow);
+    }
+    
 
-        tblHead.append(tblHeaderRow);
-        tbl.append(tblHead);
-        
-        let iteneraryTableBody = document.createElement('tbody');
-        iteneraryTableBody.className = "iteneraryTableBody";
-        tbl.append(iteneraryTableBody);
-        tablediv.append(tbl);
-  //  }
     
 }
 
