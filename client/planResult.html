@@ -173,7 +173,7 @@ As for the gear in your backpack, you'll need:</p>
     weather api call
     */
     var xmlHttp1 = new XMLHttpRequest();
-    xmlHttp1.open( "GET", "https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=a6b714ce7c4872dfde0a49406a4c050b&units=imperial&mode=json", false ); // false for synchronous request
+    xmlHttp1.open( "GET", "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutely,hourly,current&appid=a6b714ce7c4872dfde0a49406a4c050b&units=imperial", false ); // false for synchronous request
     xmlHttp1.send( null );
     var response1 = jQuery.parseJSON(xmlHttp1.responseText);
     itenerarySetup(response1, response.data[iteminJSON]);

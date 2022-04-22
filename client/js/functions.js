@@ -85,6 +85,7 @@ function displayParkInformation(data){
     //console.log(data);
 
     /*
+
     Get park Name
     */
     const nameDiv = document.getElementById("parkName");
@@ -148,14 +149,14 @@ function displayParkInformation(data){
     newheading.innerHTML = fee;
     entranceDiv.appendChild(newheading);
     budget1 = data.entranceFees[0].cost;
-    console.log(data.entranceFees);
+   
     if(data.entranceFees.length > 1){
-        console.log("test");
+      
         const entranceDiv1 = document.getElementById("admissionFee");
         var last1 =  data.entranceFees[0];
         budget2 = last1.cost;
         const fee1 = "$" + last1.cost + " for " + last1.description;
-        console.log(fee1);
+       
         const newheading1 = document.createElement("h2");
         newheading1.innerHTML = fee1;
         entranceDiv1.appendChild(newheading1);        
@@ -194,7 +195,6 @@ function displayParkInformation(data){
 }
 
 
-
 function itenerarySetup(weatherdata, parkdata){
     const start = localStorage.getItem("startDate");
     localStorage.removeItem("startDate");
@@ -205,8 +205,33 @@ function itenerarySetup(weatherdata, parkdata){
     var endDate = new Date(end.toString());
 
     var diff = new Date(endDate - startDate);
-    var numOfDays = diff.getDate();
+    var numOfDays = diff.getDate() + 1;
 
+    var today = new Date();
+    var daysInFuture = new Date(startDate - today);
+    var FutureInt = daysInFuture.getDate();
+    if(FutureInt == 31){
+        FutureInt = 0;
+    }
+    
+    /*
+    get weather data 
+    */
+    var weather = [];
+    var hightemp = [];
+    var lowtemp = [];
+    console.log(FutureInt, "   ", numOfDays);
+    if(FutureInt <= 7){
+        for(var i = 0 ; i <= numOfDays + FutureInt ; i++){
+            if(i >= FutureInt && i<=7){
+                weather.push(weatherdata.daily[i].weather[0].description);
+                hightemp.push(weatherdata.daily[i].temp.max);
+                lowtemp.push(weatherdata.daily[i].temp.min);
+                console.log(i , "  " , weatherdata.daily[i].dt, "  ", weatherdata.daily[i].temp.max,"  ", weatherdata.daily[i].weather[0].description);
+            }
+           
+        }
+    }
     
     const tablediv = document.getElementById("itenerary");
   
@@ -247,6 +272,35 @@ function itenerarySetup(weatherdata, parkdata){
     /*
     add body
     */
+   
+        
+        let weatherRow = document.createElement('tr');
+        weatherRow.className = "tablebodyrow";
+        let blankSquare = document.createElement('td');
+        blankSquare.innerText = "";
+        weatherRow.append(blankSquare);
+        for(var i = 0 ; i < numOfDays ; i ++){
+            if(i >= FutureInt-1){
+                console.log(i , "  " ,hightemp[i], "   ", weather[i]);
+                let weatherDay = document.createElement('td');
+                weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
+                weatherRow.append(weatherDay);
+            }
+            else if(FutureInt+numOfDays > 7){
+                console.log(i , "  " ,hightemp[i], "   ", weather[i]);
+                let weatherDay = document.createElement('td');
+                weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
+                weatherRow.append(weatherDay);
+            }
+           
+            else{
+                let weatherDay = document.createElement('td');
+                weatherDay.innerText = "";
+                weatherRow.append(weatherDay);
+            }
+        }
+        iteneraryTableBody.append(weatherRow);
+
     for(var i = 0; i < 24 ; i++){
         let tableBodyRow = document.createElement('tr');
         tableBodyRow.className = "tablebodyrow";
@@ -261,9 +315,7 @@ function itenerarySetup(weatherdata, parkdata){
         }
         iteneraryTableBody.append(tableBodyRow);
     }
-    
 
-    
 }
 
 /*
@@ -271,10 +323,10 @@ function itenerarySetup(weatherdata, parkdata){
 //USING FOR DEBUGGING
 const request = require('request');
 
-request('https://developer.nps.gov/api/v1/parks?q=camping&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&stateCode=WY', { json: true }, (err, res, body) => {
+request("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=minutely,hourly,current&appid=a6b714ce7c4872dfde0a49406a4c050b&units=imperial", { json: true }, (err, res, body) => {
   if (err) { return console.log(err); }
-  var act = body.data[3].activities;
-    console.log(body.data[2]);
+  
+    console.log(body.daily[7].weather[0]);
 
 });
 
