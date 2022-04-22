@@ -49,14 +49,17 @@
 
   <div id="Overview" class="tabcontent" id="defaultOpen">
     <script>  </script>
-    <h3>We picked out...</h3>
+    <h2 class="pk">We picked out...</h2>
     <div id="parkName" class="pkname"></div>
+    <div class="pkwrapper">
     <div id="parkOverview" class="pkdes"></div>
     <div id ="act" class="pkact">
-      Activites in Park:
+      <h2 class="pk">Activities in Park:</h2>
+      <br>
       <ul class="list-group" id ="activities">
       <!--JavaScript will add items-->
       </ul></div>
+    </div>
     <div id="parkImages" class="pkpics"></div>
 
   </div>
@@ -69,7 +72,7 @@
     <div id="generalInfo">
       <br><br><br><br>
       <h1>
-      Depending on how you plan on camping, the folllowing information might differ but here's our 
+      Depending on how you plan on camping, the folllowing information might differ but here's our
       general camping checklist for you.</h1>
       <h2>
         <p>
@@ -95,7 +98,7 @@ As for the gear in your backpack, you'll need:</p>
     <br> - Food sack
     </p><br>
     <p>Make sure to plan your meals accoringly and pack for an extra day's supply of food. Energy bars and drinks are a good snack while on the move
-      and plan your meals to be more on the side of a large snack. Water is the most important for survival and a good time. 
+      and plan your meals to be more on the side of a large snack. Water is the most important for survival and a good time.
       In addition to your water bottle, bring a water filter/purifier.</p>
 
       <p>Once the essentials are packed, make sure you aquire the proper clothing to make yourself confortable. Always pack for
@@ -108,7 +111,7 @@ As for the gear in your backpack, you'll need:</p>
         <br>- Lightweight jacket
         <br>- Hiking boots
         <br>- Wool socks
-       </p> 
+       </p>
       </h2>
     </div>
   </div>
@@ -166,7 +169,7 @@ As for the gear in your backpack, you'll need:</p>
 
     var varlong = response.data[iteminJSON].longitude;
     const long = new String(varlong);
-    localStorage.setItem("long", long);    
+    localStorage.setItem("long", long);
 
     displayParkInformation(response.data[iteminJSON]);
     /*

@@ -20,6 +20,10 @@ const searchResults = document.getElementById('autocomplete');
 let userIn = "";
 searchResults.addEventListener('keyup', (e) => {
     userIn = e.target.value;
+    console.log(e.key);
+    if (e.key === 'Enter') {
+        getParks();
+      }
 });
 
 showParks = parks => {
@@ -27,7 +31,7 @@ showParks = parks => {
     const resultsDiv = document.createElement('div');
     resultsDiv.setAttribute("id", "results");
     parksDiv.append(resultsDiv);
-    
+
     let splitCity = userIn.split(",");
     let stateVal;
     console.log(splitCity);
@@ -59,12 +63,12 @@ showParks = parks => {
     }
 
     parks.forEach(park => {
-        const parkDiv = document.createElement('div');
+        const parkDiv = document.createElement('div.pkres');
         const parkElement = document.createElement('h2');
         const parkImg = document.createElement('img');
         const pageLink = document.createElement('a');
         if(park.states == stateVal){
-            parkElement.innerText = `Park Name: ${park.fullName}`;
+            parkElement.innerText = `${park.fullName}`;
             pageLink.setAttribute("href", '#'); //have to change this once on heroku
             pageLink.setAttribute("id", `${park.fullName}`);
             pageLink.setAttribute("title", count);
