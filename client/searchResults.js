@@ -20,6 +20,10 @@ const searchResults = document.getElementById('autocomplete');
 let userIn = "";
 searchResults.addEventListener('keyup', (e) => {
     userIn = e.target.value;
+    console.log(e.key);
+    if (e.key === 'Enter') {
+        getParks();
+      }
 });
 
 showParks = parks => {
