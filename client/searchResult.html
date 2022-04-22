@@ -36,17 +36,25 @@
 </body>
 <script src="searchResults.js"></script>
 <script type="text/javascript">
-  console.log("test");
-  const parkDiv = document.querySelector('#clickResult');
-  console.log(parkDiv);
   let nameOfPark = localStorage.getItem('parkNameVal');
-  console.log(nameOfPark);
-  const infoDiv = document.createElement('div');
-  console.log(infoDiv);
-  const parkNamePage = document.createElement('h2');
-  let title = "Park Name: ";
-  parkNamePage.innerText = title.concat(nameOfPark);
-  infoDiv.append(parkNamePage);
-  parkDiv.append(infoDiv);
+  let start = localStorage.getItem('startVal');
+  console.log(start);
+  let callStr = 'https://developer.nps.gov/api/v1/parks?q=camping&limit=1&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu&start=' + start;
+  console.log(callStr)
+  fetch(callStr)
+        .then(response => response.json())
+        .then(parks => showParkInfo(parks.data))
+  
+  showParkInfo = parks => {
+    parks.forEach(park => {
+      const parkDiv = document.querySelector('#clickResult');
+      const infoDiv = document.createElement('div');
+      infoDiv.setAttribute("id", "result"); //ID for styling
+      const parkNamePage = document.createElement('h2');
+      parkNamePage.innerText = `${park.fullName}`;
+      infoDiv.append(parkNamePage);
+      parkDiv.append(infoDiv);
+    });
+  }
 </script>
 </html>

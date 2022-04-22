@@ -1,12 +1,14 @@
 const searchButton = document.getElementById('searchButton');
 searchButton.addEventListener("click", getParks);
 var parkName = "";
+let count = 0;
 
 function getParks(){
     const resultsDiv = document.getElementById('results')
     //console.log(resultsDiv);
     if(resultsDiv != null){
         resultsDiv.remove();
+        count = 0;
         parkName = "";
     }
     fetch('https://developer.nps.gov/api/v1/parks?q=camping&limit=466&api_key=clKNqgX4H1lU7WEsGuUOkJxbKEyEFPoL6tXRDBEu')
@@ -65,11 +67,15 @@ showParks = parks => {
             parkElement.innerText = `Park Name: ${park.fullName}`;
             pageLink.setAttribute("href", '#'); //have to change this once on heroku
             pageLink.setAttribute("id", `${park.fullName}`);
+            pageLink.setAttribute("title", count);
             pageLink.setAttribute("onclick", "loadPage(); return false;");
             //pageLink.setAttribute("onload", "generatePage();");
             pageLink.addEventListener("click", function(){
                 parkName = this.id;
+                let start = this.title;
+                console.log(start);
                 localStorage.setItem('parkNameVal', parkName);
+                localStorage.setItem('startVal', start);
             }, true);
             parkImg.setAttribute("src", `${park.images[0].url}`);
             parkImg.setAttribute("width", "200px");
@@ -80,26 +86,13 @@ showParks = parks => {
             parkDiv.setAttribute("id", `${park.fullName}`);
             resultsDiv.append(parkDiv);
         }
+        count++;
     });
 }
 
 function loadPage(){
     window.location.href = "searchResult.html";
 }
-
-/*function generatePage(){
-    let nameOfPark = localStorage.getItem('parkNameVal');
-    console.log(nameOfPark);
-    const parkDiv = document.querySelector('#clickResult');
-    console.log(parkDiv);
-    const infoDiv = document.createElement('div');
-    console.log(infoDiv);
-    const parkNamePage = document.createElement('h2');
-    let title = "Park Name: ";
-    parkNamePage.innerText = title.concat(nameOfPark);
-    infoDiv.append(parkNamePage);
-    parkDiv.append(infoDiv);
-}*/
 
 const statesCon = [
     ['Arizona', 'AZ'],
