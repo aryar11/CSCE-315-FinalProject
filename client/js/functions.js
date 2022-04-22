@@ -15,7 +15,7 @@ activitesList = [
     "Canoe or Kayak Camping",
     "Swimming",
     "Freshwater Swimming",
-    "Wildlife Watching", 
+    "Wildlife Watching",
     "Birdwatching",
     "Dams",
     "Water Trails",
@@ -27,15 +27,15 @@ function getRandomInt(max) {
 }
 
 function saveParkinfo(){
-    var varState = document.getElementById("inputState1").value; 
+    var varState = document.getElementById("inputState1").value;
     const state = new String(varState);
     console.log(state);
-    localStorage.setItem("state", state); 
+    localStorage.setItem("state", state);
 
-    var varBudget = document.getElementById("enterbudget").value; 
+    var varBudget = document.getElementById("enterbudget").value;
     const budget = new String(varBudget);
-    localStorage.setItem("budget", budget);      
-    
+    localStorage.setItem("budget", budget);
+
 }
 
 
@@ -47,7 +47,7 @@ function displayParkInformation(data){
     */
     const nameDiv = document.getElementById("parkName");
     const parkName = data.fullName;
-    const heading = document.createElement("h1");
+    const heading = document.createElement("div.pkname");
     heading.innerHTML = parkName;
     nameDiv.appendChild(heading);
 
@@ -55,11 +55,12 @@ function displayParkInformation(data){
     Get Overview of Park
     */
     const overviewDiv = document.getElementById("parkOverview");
+    // overviewDiv.classList.add('pkname');
     const overview = data.description;
-    const heading2 = document.createElement("h1");
+    const heading2 = document.createElement("div.pkdes");
     heading2.innerHTML = overview;
     overviewDiv.appendChild(heading2);
-    
+
     /*
     Get Key Activities From Park
     */
@@ -76,18 +77,18 @@ function displayParkInformation(data){
         li.innerText = item;
         list.appendChild(li);
     })
-    
+
     /*
     Grabbing the first two images from API reponse
     */
     const img1 = document.createElement("img");
     img1.src= data.images[1].url; //image 1
-    img1.width="500" 
+    img1.width="500"
     img1.height="400"
 
     const img2 = document.createElement("img");
     img2.src= data.images[0].url; //image 2
-    img2.width="500" 
+    img2.width="500"
     img2.height="400"
 
     var src = document.getElementById("parkImages");
@@ -115,17 +116,17 @@ function displayParkInformation(data){
         console.log(fee1);
         const newheading1 = document.createElement("h2");
         newheading1.innerHTML = fee1;
-        entranceDiv1.appendChild(newheading1);        
+        entranceDiv1.appendChild(newheading1);
     }
-    
+
     const budget = localStorage.getItem("budget");
-    localStorage.removeItem("budget");   
-   
+    localStorage.removeItem("budget");
+
     if(parseInt(budget) < budget1 ){
 
         const newheading2 = document.createElement("h3");
         newheading2.innerHTML = "*Note the park Entrance Fee is higher than your budget. We recommend adjusting your budget or refresh the page";
-        entranceDiv.appendChild(newheading2);             
+        entranceDiv.appendChild(newheading2);
     }
 
     /*
@@ -135,7 +136,7 @@ function displayParkInformation(data){
     const directions = data.directionsInfo;
     const directionHeading = document.createElement("h1");
     directionHeading.innerHTML = directions;
-  
+
     directionsDiv.appendChild(directionHeading);
 
     const directionURLHeading = document.createElement("a");
@@ -144,7 +145,7 @@ function displayParkInformation(data){
 
     directionURLHeading.title  = "Click Here for more direction details";
 
-    directionURLHeading.href = data.directionsUrl; 
+    directionURLHeading.href = data.directionsUrl;
     directionURLHeading.target="_blank";
     directionsDiv.appendChild(directionURLHeading);
 

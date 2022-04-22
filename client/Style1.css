@@ -169,7 +169,7 @@ button.styleSwitch {
 div.content {
   margin-left: 200px;
   padding: 1px 16px;
-  height: 1000px;
+  height: 800px;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -317,29 +317,85 @@ div.search {
   height: 550px;
   width: 35%;
 }
-/* Comment Pics out for Presentation Monday
-#BasicFA {
-  background: url('FirstAid.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; /* can use either cover or contain. contain leaves some blank space between sections
-  margin-left: 200px;
+
+div.FAbullets {
+  width: 300px;
+  float: left;
 }
-#Wildlife{
-  background: url('Wildlife.jpg');
+
+div.wrapper {
+  /* width: 500px; */
+  overflow: hidden;
+}
+/* Comment Pics out for Presentation Monday */
+div.image {
+  float: left;
+  background: url('img/FirstAidcropped.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 350px;
+  margin-top: 30px;
+  height: 200px;
+  width: 80%;
+}
+/* #Wildlife{
+  background: url('img/Wildlife.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: 200px;
 }
 #EMS{
-  background: url('Prepare4EMS.jpg');
+  background: url('img/Prepare4EMS.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: 200px;
 }
 #WildFA{
-  background: url('CommonInj.jpg');
+  background: url('img/CommonInj.jpg');
   background-repeat: no-repeat;
-  background-size: cover; /*using contain on this does not cover the entire section. 
-  margin-left: 200px;
+  background-size: cover;
+  /*using contain on this does not cover the entire section.  */
+  /* margin-left: 200px; */
+
+
+/* div.image {
+  background-image: url("img/FirstAid.jpg");
+  background-repeat: no-repeat;
+  /* background-position: left top; */
+  /* padding-top:100px;
+  margin-bottom:100px; */
+
+
+/* } */
+
+div.pkname {
+  color: rgb(124, 142, 75);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 60px;
 }
-*/
+
+div.pkdes {
+  color: rgb(43, 58, 103);
+  font-size: 20px;
+  float: left;
+  width: 500px;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+div.pkwrapper {
+  overflow: hidden;
+  margin: 25px;
+}
+
+div.pkact {
+   color: black;
+   overflow: hidden;
+   float: left;
+   margin-right: 75px;
+   margin-left: 200px;
+   color: rgb(43, 58, 103);
+   font-size: 20px;
+
+ }
