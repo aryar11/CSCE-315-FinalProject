@@ -22,6 +22,33 @@ activitesList = [
     "Waterfalls"
 ]
 
+hours = [
+    "12 a.m",
+    "1 a.m",
+    "2 a.m",
+    "3 a.m",
+    "4 a.m",
+    "5 a.m",
+    "6 a.m",
+    "7 a.m",
+    "8 a.m",
+    "9 a.m",
+    "10 a.m",
+    "11 a.m",
+    "12 p.m",
+    "1 p.m",
+    "2 p.m",
+    "3 p.m",
+    "4 p.m",
+    "5 p.m",
+    "6 p.m",
+    "7 p.m",
+    "8 p.m",
+    "9 p.m",
+    "10 p.m",
+    "11 p.m"
+]
+
 function getRandomInt(max) {
     return Math.floor(Math.random() *( max ));
 }
@@ -167,6 +194,7 @@ function displayParkInformation(data){
 }
 
 
+
 function itenerarySetup(weatherdata, parkdata){
     const start = localStorage.getItem("startDate");
     localStorage.removeItem("startDate");
@@ -179,7 +207,7 @@ function itenerarySetup(weatherdata, parkdata){
     var diff = new Date(endDate - startDate);
     var numOfDays = diff.getDate();
 
-    console.log(numOfDays, diff);
+    
     const tablediv = document.getElementById("itenerary");
   
     var tbl = document.createElement('table');
@@ -197,11 +225,14 @@ function itenerarySetup(weatherdata, parkdata){
     tblHeaderRow.append(hourheader);
 
 
-    for(var i =0 ; i < numOfDays ; i++ ){
+    for(var i = 0 ; i < numOfDays ; i++ ){
         let day = document.createElement('th');
-        day.innerText = i;
+        const dateArray = startDate.toString().split(" ");
+        day.innerText = dateArray[0] + " " + dateArray[1] + " " + dateArray[2] + " " + dateArray[3];
         day.contentEditable = "false";
         tblHeaderRow.append(day);
+        startDate.setDate(startDate.getDate() + 1);
+
     }
     tblHead.append(tblHeaderRow);
     tbl.append(tblHead);    
@@ -216,12 +247,11 @@ function itenerarySetup(weatherdata, parkdata){
     /*
     add body
     */
-
     for(var i = 0; i < 24 ; i++){
         let tableBodyRow = document.createElement('tr');
         tableBodyRow.className = "tablebodyrow";
         let hour = document.createElement('td');
-        hour.innerText = i*100;
+        hour.innerText = hours[i];
         hour.contentEditable = "false";
         tableBodyRow.append(hour);   
         for(var j = 0 ; j < numOfDays ; j++ ){
