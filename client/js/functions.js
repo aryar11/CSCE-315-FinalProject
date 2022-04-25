@@ -282,15 +282,19 @@ function itenerarySetup(weatherdata, parkdata){
         for(var i = 0 ; i < numOfDays ; i ++){
             if(i >= FutureInt-1){
                 console.log(i , "  " ,hightemp[i], "   ", weather[i]);
-                let weatherDay = document.createElement('td');
-                weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
-                weatherRow.append(weatherDay);
+                if(weather[i] != undefined ){
+                    let weatherDay = document.createElement('td');
+                    weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
+                    weatherRow.append(weatherDay);
+                }
             }
             else if(FutureInt+numOfDays > 7){
                 console.log(i , "  " ,hightemp[i], "   ", weather[i]);
-                let weatherDay = document.createElement('td');
-                weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
-                weatherRow.append(weatherDay);
+                if(weather[i] != undefined){
+                    let weatherDay = document.createElement('td');
+                    weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
+                    weatherRow.append(weatherDay);
+                }
             }
 
             else{
@@ -310,13 +314,47 @@ function itenerarySetup(weatherdata, parkdata){
         tableBodyRow.append(hour);
         for(var j = 0 ; j < numOfDays ; j++ ){
             let formInput = document.createElement('td');
-            formInput.innerText = 'Click Here to Build Itinerary';
+            if(i == 0){
+                formInput.innerText = 'Click Here to Build Itinerary';
+            }
             tableBodyRow.append(formInput);
         }
         iteneraryTableBody.append(tableBodyRow);
     }
+}
+
+function displayLocalTrails(traildata){
+    //check if there are any trails nearby
+    if(traildata.length <= 0){
+        return;
+    }
+    var trailList = [];
+    var trailDescription = [];
+    for(var i = 0 ; i < traildata.length ; i ++){
+        if(!traildata[i].name.toString().includes("Park")){
+            trailList.push(traildata[i].name);
+           // trailDescription.push(traildata[i].description);
+        }
+    }
+    let list = document.getElementById("trail-list");
+    let title = document.createElement("h2");
+    title.innerText = "Here are some hiking/biking trails at this park:" + '\r\n';
+    list.appendChild(title);
+    for(var i = 0; i < trailList.length ; i++){
+        if(i >= 10){
+            //we dont want more than 10 items
+            break;
+        }
+        let dt = document.createElement("dt");
+        dt.innerText = trailList[i];
+        list.appendChild(dt);
+        //let dd = document.createElement("dd");
+       // dd.innerText = "Diffuculty:" + trailDescription[i];
+        //list.appendChild(dd);
+    }
 
 }
+
 
 /*
 
