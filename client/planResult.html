@@ -68,27 +68,30 @@
     <!-- <h3>Logistics</h3> -->
     <div class=pkwrapper>
     <div id="map" class="pkmap"></div>
-    <div id="direction" class="pkdirect"></div>
-    </div>
-    <div id = "admissionFee"><h1>Prices:</h1></div>
-    <div id="generalInfo">
+    <div class="text">
+      <div id="direction" class="pkdirect"></div>
+      <div id = "admissionFee" class="pkHelp"><h2>Prices:</h2></div>
+  </div>
+  </div>
+
+    <div id="generalInfo" class="generalInfo">
       <br><br><br><br>
-      <h1>
+      <h1 class="prepinfo">
       Depending on how you plan on camping, the folllowing information might differ but here's our
-      general camping checklist for you.</h1>
-      <h2>
-        <p>
+      general camping checklist for you:</h1>
+      <!-- <h2> -->
+        <h2 class="pkHelp">
         First, each individual camping needs a proper backpack, one that is rated to hold 30-50 liters is proper for overnight trips.
-As for the gear in your backpack, you'll need:</p>
-  <p>
+As for the gear in your backpack, you'll need:</h2>
+  <p class="pkHelper">
   - Backpack with raincover
   <br>- Backpacking tent
   <br>- Sleeping bag
   <br>- Sleeping pad
   <br>- Headlamp with extra batteries
   </p><br>
-  <p>As for what to bring to prepare food, we got you covered. You'll need</p>
-  <p>
+  <h2 class="pkHelp">As for what to bring to prepare food, we got you covered. You'll need:</h2>
+  <p class="pkHelper">
     - Backpacking Stove
     <br>- Fuel for Stove
     <br>- Dishes/Bowl
@@ -99,13 +102,13 @@ As for the gear in your backpack, you'll need:</p>
     <br> - Collapsible water container
     <br> - Food sack
     </p><br>
-    <p>Make sure to plan your meals accoringly and pack for an extra day's supply of food. Energy bars and drinks are a good snack while on the move
+    <p class="pkHelper">Make sure to plan your meals accoringly and pack for an extra day's supply of food. Energy bars and drinks are a good snack while on the move
       and plan your meals to be more on the side of a large snack. Water is the most important for survival and a good time.
       In addition to your water bottle, bring a water filter/purifier.</p>
 
-      <p>Once the essentials are packed, make sure you aquire the proper clothing to make yourself confortable. Always pack for
-        unexpected weather.</p>
-       <p>
+      <h2 class="pkHelp">Once the essentials are packed, make sure you aquire the proper clothing to make yourself confortable. Always pack for
+        unexpected weather.</h2>
+       <p class="pkHelper">
         <br>- Moisture wicking underwear
         <br>- Mositure wicking t-shirt
         <br>- Quick drying pants
@@ -114,7 +117,6 @@ As for the gear in your backpack, you'll need:</p>
         <br>- Hiking boots
         <br>- Wool socks
        </p>
-      </h2>
     </div>
   </div>
 
@@ -187,7 +189,7 @@ As for the gear in your backpack, you'll need:</p>
     xmlHttp1.send( null );
     var response1 = jQuery.parseJSON(xmlHttp1.responseText);
     itenerarySetup(response1, response.data[iteminJSON]);
-    /* 
+    /*
     trail api
     */
     var xmlHttp2 = new XMLHttpRequest();
@@ -195,7 +197,7 @@ As for the gear in your backpack, you'll need:</p>
     xmlHttp2.setRequestHeader("X-RapidAPI-Key","3b33ecc570msh452ac6e3eba3483p1f8ac5jsn49f67d38bdb5");
     xmlHttp2.setRequestHeader("X-RapidAPI-Host","trailapi-trailapi.p.rapidapi.com");
     xmlHttp2.send( null );
-    var response2 = jQuery.parseJSON(xmlHttp2.responseText);   
+    var response2 = jQuery.parseJSON(xmlHttp2.responseText);
     console.log(response2);
     displayLocalTrails(response2.data);
   </script>

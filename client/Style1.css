@@ -14,6 +14,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 3;
 }
 .topnav a {
   float: left;
@@ -319,6 +320,7 @@ div.search {
   height: 550px;
   width: 35%;
   position: relative;
+  z-index: 1;
 }
 
 div.FAbullets {
@@ -385,6 +387,7 @@ div.pkdes {
   width: 500px;
   margin-left: 100px;
   margin-right: 50px;
+  margin-top: 20px;
 }
 
 div.pkwrapper {
@@ -400,6 +403,7 @@ div.pkact {
    margin-left: 200px;
    color: rgb(43, 58, 103);
    font-size: 20px;
+   margin-top: 20px;
  }
 
  h2.pk {
@@ -436,21 +440,31 @@ img {
 
 div.pkmap {
   float:left;
-  margin-right: 50px;
+  position: absolute;
+  margin-right: 100px;
+  overflow:hidden;
 }
 
-div.pkdirect {
-  float:left;
-  overflow:hidden;
+ div.pkdirect {
   margin-left: 100px;
   margin:75px;
+  float: left;
+  overflow: hidden;
+}
+
+div.text {
+  margin-left: 100px;
+  margin: 75px;
+  float: left;
+  overflow:hidden;
 }
 
 h1.pkdirections {
   color: rgb(43, 58, 103);
   text-align: center;
   font-family: Poppins, sans-serif;
-  font-size: 50px;
+  font-size: 20px;
+  margin-left: 100px;
 }
 
 img.downarrow {
@@ -458,4 +472,35 @@ img.downarrow {
   position:fixed;
   bottom: 5px;
   right: 5px;
+}
+
+a.pkURL {
+  justify-content: center;
+  color: rgb(203, 75, 0);
+  font-family: Poppins, sans-serif;
+
+}
+
+div.generalInfo {
+  margin: 50px;
+}
+
+a.pkURL:active {
+  color: rgb(43, 58, 103);
+}
+
+h2.pkHelp {
+  color: rgb(124, 142, 75);
+  font-family: Poppins, sans-serif;
+  margin-top: 120px;
+  font-size: 30px;
+}
+
+p.pkHelper {
+  font-size: 20px;
+  padding: 10px;
+}
+
+h1.prepinfo {
+  font-size: 40px;
 }
