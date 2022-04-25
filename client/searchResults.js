@@ -1,5 +1,5 @@
-const searchButton = document.getElementById('searchButton');
-searchButton.addEventListener("click", getParks);
+//const searchButton = document.getElementById('searchButton');
+//searchButton.addEventListener("click", getParks);
 var parkName = "";
 let count = 0;
 
@@ -28,7 +28,7 @@ searchResults.addEventListener('keyup', (e) => {
 
 showParks = parks => {
     const parksDiv = document.querySelector('#parksList');
-    const resultsDiv = document.createElement('div');
+    const resultsDiv = document.createElement('div.pkres');
     resultsDiv.setAttribute("id", "results");
     parksDiv.append(resultsDiv);
 
@@ -63,9 +63,12 @@ showParks = parks => {
     }
 
     parks.forEach(park => {
-        const parkDiv = document.createElement('div.pkres');
-        const parkElement = document.createElement('h2');
+        const parkDiv = document.createElement('div');
+        parkDiv.className = "pkres";
+        const parkElement = document.createElement('h1');
+        parkElement.className = "searchpkname";
         const parkImg = document.createElement('img');
+        parkImg.className = "pkresimg";
         const pageLink = document.createElement('a');
         if(park.states == stateVal){
             parkElement.innerText = `${park.fullName}`;
@@ -77,14 +80,15 @@ showParks = parks => {
             pageLink.addEventListener("click", function(){
                 parkName = this.id;
                 let start = this.title;
-                console.log(start);
+                //console.log(start);
                 localStorage.setItem('parkNameVal', parkName);
                 localStorage.setItem('startVal', start);
             }, true);
             parkImg.setAttribute("src", `${park.images[0].url}`);
             parkImg.setAttribute("width", "200px");
             parkImg.setAttribute("height", "auto");
-            parkDiv.append(parkElement);
+            pageLink.append(parkElement);
+            //parkDiv.append(parkElement);
             pageLink.append(parkImg);
             parkDiv.append(pageLink);
             parkDiv.setAttribute("id", `${park.fullName}`);

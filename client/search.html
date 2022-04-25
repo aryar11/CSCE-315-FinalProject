@@ -29,9 +29,7 @@
     <h1>Explore Around You</h1>
   <div class = "search">
     <div id = "searchWrapper">
-      <input class="searchBar" type="text" id="autocomplete" placeholder="Search By State Or City..." autocomplete="on">
-      <br>
-      <button type="submit" class="searchB" id = "searchButton"><class="fa fa-search">Submit</button>
+      <input class="searchBar" type="text" id="autocomplete" placeholder="Search By State Or City, Then Press Enter" autocomplete="on">
     </div>
     <div id='parksList'>
     </div>
@@ -41,6 +39,7 @@
   <script src="export.js"></script>
   <script src="main.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6S6lDX249i90uGLFx1HoA_qUusGzYWDg&libraries=places&callback=initialize" type="text/javascript"></script>
+
 
   <div class="pkres"></div>
   <script type="text/javascript">
@@ -54,8 +53,9 @@
       var input = document.getElementById('autocomplete');
       var autocomplete = new google.maps.places.Autocomplete(input, options);
    }
-   google.maps.event.addDomListener(window, 'load', initialize);
+   google.maps.event.addListener(window, 'load', initialize());
 </script>
+  <img class="downarrow" src="img/downarrow.png" alt="down arrow in shape of tree">
 </body>
 
 </html>

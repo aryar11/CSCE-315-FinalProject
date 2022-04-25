@@ -318,6 +318,7 @@ div.search {
 #map{
   height: 550px;
   width: 35%;
+  position: relative;
 }
 
 div.FAbullets {
@@ -405,12 +406,56 @@ div.pkact {
    font-size: 30px;
  }
 
-div.pkpics {  //might need to change so they're img's
+  /* //might need to change so they're img's */
+  div.pkpics {
   margin-left: 200px;
   margin: 25px;
 }
 
 div.pkres {
   /* finishing making a pkres div, need to edit results, put pics next to text */
+  align-items: center;
+}
 
+h1.searchpkname {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+img.pkresimg {
+  width: 400px;
+  margin-bottom:20px;
+  align-items: center;
+  align-content: center;
+}
+
+img {
+  margin: 50px;
+  margin-left: 115px;
+}
+
+div.pkmap {
+  float:left;
+  margin-right: 50px;
+}
+
+div.pkdirect {
+  float:left;
+  overflow:hidden;
+  margin-left: 100px;
+  margin:75px;
+}
+
+h1.pkdirections {
+  color: rgb(43, 58, 103);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+}
+
+img.downarrow {
+  height: 60px;
+  position:fixed;
+  bottom: 5px;
+  right: 5px;
 }

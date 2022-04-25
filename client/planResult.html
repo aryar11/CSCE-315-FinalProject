@@ -65,9 +65,11 @@
   </div>
 
   <div id="Logistics" class="tabcontent">
-    
-    <div id="map"></div>
-    <div id="direction"></div>
+    <!-- <h3>Logistics</h3> -->
+    <div class=pkwrapper>
+    <div id="map" class="pkmap"></div>
+    <div id="direction" class="pkdirect"></div>
+    </div>
     <div id = "admissionFee"><h1>Prices:</h1></div>
     <div id="generalInfo">
       <br><br><br><br>
@@ -94,7 +96,7 @@ As for the gear in your backpack, you'll need:</p>
     <br>- Cup
     <br> - Soap
     <br> - Small towel
-    <br> - Sollapsible water container
+    <br> - Collapsible water container
     <br> - Food sack
     </p><br>
     <p>Make sure to plan your meals accoringly and pack for an extra day's supply of food. Energy bars and drinks are a good snack while on the move
@@ -119,6 +121,11 @@ As for the gear in your backpack, you'll need:</p>
   <div id="Create Itinerary" class="tabcontent">
     <h3>Create Itinerary</h3>
     <div id = "itenerary" contenteditable="true"></div>
+    <div id = "trails">
+      <br>
+      <br>
+      <dl class="dl" id ="trail-list"> </dl>
+    </div>
   </div>
 
 
@@ -180,6 +187,17 @@ As for the gear in your backpack, you'll need:</p>
     xmlHttp1.send( null );
     var response1 = jQuery.parseJSON(xmlHttp1.responseText);
     itenerarySetup(response1, response.data[iteminJSON]);
+    /* 
+    trail api
+    */
+    var xmlHttp2 = new XMLHttpRequest();
+    xmlHttp2.open( "GET", "https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=" + lat + "&lon=" + long + "&radius=60", false ); // false for synchronous request
+    xmlHttp2.setRequestHeader("X-RapidAPI-Key","3b33ecc570msh452ac6e3eba3483p1f8ac5jsn49f67d38bdb5");
+    xmlHttp2.setRequestHeader("X-RapidAPI-Host","trailapi-trailapi.p.rapidapi.com");
+    xmlHttp2.send( null );
+    var response2 = jQuery.parseJSON(xmlHttp2.responseText);   
+    console.log(response2);
+    displayLocalTrails(response2.data);
   </script>
 
 
