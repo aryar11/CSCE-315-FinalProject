@@ -28,7 +28,7 @@ searchResults.addEventListener('keyup', (e) => {
 
 showParks = parks => {
     const parksDiv = document.querySelector('#parksList');
-    const resultsDiv = document.createElement('div');
+    const resultsDiv = document.createElement('div.pkres');
     resultsDiv.setAttribute("id", "results");
     parksDiv.append(resultsDiv);
 
@@ -63,9 +63,12 @@ showParks = parks => {
     }
 
     parks.forEach(park => {
-        const parkDiv = document.createElement('div.pkres');
-        const parkElement = document.createElement('h2');
+        const parkDiv = document.createElement('div');
+        parkDiv.className = "pkres";
+        const parkElement = document.createElement('h1');
+        parkElement.className = "searchpkname";
         const parkImg = document.createElement('img');
+        parkImg.className = "pkresimg";
         const pageLink = document.createElement('a');
         if(park.states == stateVal){
             parkElement.innerText = `${park.fullName}`;

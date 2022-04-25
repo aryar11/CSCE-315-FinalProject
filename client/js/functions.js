@@ -15,7 +15,7 @@ activitesList = [
     "Canoe or Kayak Camping",
     "Swimming",
     "Freshwater Swimming",
-    "Wildlife Watching", 
+    "Wildlife Watching",
     "Birdwatching",
     "Dams",
     "Water Trails",
@@ -57,27 +57,27 @@ function saveParkinfo(){
     /*
     get name of state
     */
-    var varState = document.getElementById("inputState1").value; 
+    var varState = document.getElementById("inputState1").value;
     const state = new String(varState);
     console.log(state);
-    localStorage.setItem("state", state); 
+    localStorage.setItem("state", state);
 
-    /* 
+    /*
     get their budget
     */
-    var varBudget = document.getElementById("enterbudget").value; 
+    var varBudget = document.getElementById("enterbudget").value;
     const budget = new String(varBudget);
     localStorage.setItem("budget", budget);
-    
+
     /*
     get start and end date
     */
     var varStartDate =  document.getElementById("startDate").value;
-    var varEndDate =  document.getElementById("endDate").value; 
+    var varEndDate =  document.getElementById("endDate").value;
     const startDate = new String(varStartDate);
     const endDate = new String(varEndDate);
-    localStorage.setItem("startDate", startDate); 
-    localStorage.setItem("endDate", endDate); 
+    localStorage.setItem("startDate", startDate);
+    localStorage.setItem("endDate", endDate);
 }
 
 
@@ -90,7 +90,7 @@ function displayParkInformation(data){
     */
     const nameDiv = document.getElementById("parkName");
     const parkName = data.fullName;
-    const heading = document.createElement("h1");
+    const heading = document.createElement("h1.pkname");
     heading.innerHTML = parkName;
 
     nameDiv.appendChild(heading);
@@ -103,7 +103,7 @@ function displayParkInformation(data){
     const heading2 = document.createElement("h1");
     heading2.innerHTML = overview;
     overviewDiv.appendChild(heading2);
-    
+
     /*
     Get Key Activities From Park
     */
@@ -120,18 +120,18 @@ function displayParkInformation(data){
         li.innerText = item;
         list.appendChild(li);
     })
-    
+
     /*
     Grabbing the first two images from API reponse
     */
     const img1 = document.createElement("img");
     img1.src= data.images[1].url; //image 1
-    img1.width="500" 
+    img1.width="500"
     img1.height="400"
 
     const img2 = document.createElement("img");
     img2.src= data.images[0].url; //image 2
-    img2.width="500" 
+    img2.width="500"
     img2.height="400"
 
     var src = document.getElementById("parkImages");
@@ -149,27 +149,27 @@ function displayParkInformation(data){
     newheading.innerHTML = fee;
     entranceDiv.appendChild(newheading);
     budget1 = data.entranceFees[0].cost;
-   
+
     if(data.entranceFees.length > 1){
-      
+
         const entranceDiv1 = document.getElementById("admissionFee");
         var last1 =  data.entranceFees[0];
         budget2 = last1.cost;
         const fee1 = "$" + last1.cost + " for " + last1.description;
-       
+
         const newheading1 = document.createElement("h2");
         newheading1.innerHTML = fee1;
-        entranceDiv1.appendChild(newheading1);        
+        entranceDiv1.appendChild(newheading1);
     }
-    
+
     const budget = localStorage.getItem("budget");
-    localStorage.removeItem("budget");   
-   
+    localStorage.removeItem("budget");
+
     if(parseInt(budget) < budget1 ){
 
         const newheading2 = document.createElement("h3");
         newheading2.innerHTML = "*Note the park Entrance Fee is higher than your budget. We recommend adjusting your budget or refresh the page";
-        entranceDiv.appendChild(newheading2);             
+        entranceDiv.appendChild(newheading2);
     }
 
     /*
@@ -179,7 +179,7 @@ function displayParkInformation(data){
     const directions = data.directionsInfo;
     const directionHeading = document.createElement("h1");
     directionHeading.innerHTML = directions;
-  
+
     directionsDiv.appendChild(directionHeading);
 
     const directionURLHeading = document.createElement("a");
@@ -188,7 +188,7 @@ function displayParkInformation(data){
 
     directionURLHeading.title  = "Click Here for more direction details";
 
-    directionURLHeading.href = data.directionsUrl; 
+    directionURLHeading.href = data.directionsUrl;
     directionURLHeading.target="_blank";
     directionsDiv.appendChild(directionURLHeading);
 
@@ -213,9 +213,9 @@ function itenerarySetup(weatherdata, parkdata){
     if(FutureInt == 31){
         FutureInt = 0;
     }
-    
+
     /*
-    get weather data 
+    get weather data
     */
     var weather = [];
     var hightemp = [];
@@ -229,12 +229,12 @@ function itenerarySetup(weatherdata, parkdata){
                 lowtemp.push(weatherdata.daily[i].temp.min);
                 console.log(i , "  " , weatherdata.daily[i].dt, "  ", weatherdata.daily[i].temp.max,"  ", weatherdata.daily[i].weather[0].description);
             }
-           
+
         }
     }
-    
+
     const tablediv = document.getElementById("itenerary");
-  
+
     var tbl = document.createElement('table');
     tbl.className = "iteneraryTable";
     tbl.style.width = '100%';
@@ -260,8 +260,8 @@ function itenerarySetup(weatherdata, parkdata){
 
     }
     tblHead.append(tblHeaderRow);
-    tbl.append(tblHead);    
-    
+    tbl.append(tblHead);
+
     let iteneraryTableBody = document.createElement('tbody');
     iteneraryTableBody.className = "iteneraryTableBody";
 
@@ -272,8 +272,8 @@ function itenerarySetup(weatherdata, parkdata){
     /*
     add body
     */
-   
-        
+
+
         let weatherRow = document.createElement('tr');
         weatherRow.className = "tablebodyrow";
         let blankSquare = document.createElement('td');
@@ -292,7 +292,7 @@ function itenerarySetup(weatherdata, parkdata){
                 weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
                 weatherRow.append(weatherDay);
             }
-           
+
             else{
                 let weatherDay = document.createElement('td');
                 weatherDay.innerText = "";
@@ -307,11 +307,11 @@ function itenerarySetup(weatherdata, parkdata){
         let hour = document.createElement('td');
         hour.innerText = hours[i];
         hour.contentEditable = "false";
-        tableBodyRow.append(hour);   
+        tableBodyRow.append(hour);
         for(var j = 0 ; j < numOfDays ; j++ ){
             let formInput = document.createElement('td');
             formInput.innerText = 'Click Here to Build Itinerary';
-            tableBodyRow.append(formInput); 
+            tableBodyRow.append(formInput);
         }
         iteneraryTableBody.append(tableBodyRow);
     }
@@ -325,7 +325,7 @@ const request = require('request');
 
 request("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=minutely,hourly,current&appid=a6b714ce7c4872dfde0a49406a4c050b&units=imperial", { json: true }, (err, res, body) => {
   if (err) { return console.log(err); }
-  
+
     console.log(body.daily[7].weather[0]);
 
 });
