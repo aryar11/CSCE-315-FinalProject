@@ -9,6 +9,8 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: parseFloat(latt), lng: parseFloat(longg) },
     zoom: 11,
+    mapTypeId: "hybrid",
+    mapTypeControl: false,
   });
 }
 
