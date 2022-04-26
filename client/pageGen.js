@@ -9,19 +9,30 @@ fetch(callStr)
 
 showParkInfo = parks => {
   parks.forEach(park => {
+    // general div
     const parkDiv = document.querySelector('#clickResult');
     const infoDiv = document.createElement('div');
-    infoDiv.className = "generalInfo";
+    infoDiv.className = "content";
     infoDiv.setAttribute("id", "result"); //ID for styling
+
+    //content div
+    const contentdiv = document.createElement('div');
+    contentdiv.classNamme = "content";
+    contentdiv.setAttribute("id", "content");
+
+    //park name
     const parkNamePage = document.createElement('h1');
     parkNamePage.className = "pkname";
     parkNamePage.setAttribute("id", "Park Name");
     parkNamePage.innerText = `${park.fullName}`;
     infoDiv.append(parkNamePage);
 
+    // description
+    const descsection = document.createElement('section');
+    descsection.setAttribute('href', "#ParkDescriptionTitle");
     const descCaption = document.createElement('h2');
     descCaption.className = "pkHelp";
-    descCaption.setAttribute("id", "Park Description Title");
+    descCaption.setAttribute("id", "ParkDescriptionTitle");
     descCaption.innerText = "Description:";
     infoDiv.append(descCaption);
     const parkDesc = document.createElement('p');
@@ -30,9 +41,10 @@ showParkInfo = parks => {
     parkDesc.innerText = `${park.description}`;
     infoDiv.append(parkDesc);
 
+    //activities
     const activitiesCaption = document.createElement('h2');
     activitiesCaption.className = "pkHelp";
-    activitiesCaption.setAttribute("id", "Park Activities Title");
+    activitiesCaption.setAttribute("id", "ParkActivitiesTitle");
     activitiesCaption.innerText = "Activities:";
     infoDiv.append(activitiesCaption);
     const unList = document.createElement('ul');
@@ -46,9 +58,10 @@ showParkInfo = parks => {
     }
     infoDiv.append(unList);
 
+    //hours
     const hoursCaption = document.createElement('h2');
     hoursCaption.className = "pkHelp";
-    hoursCaption.setAttribute("id", "Hours Caption");
+    hoursCaption.setAttribute("id", "HoursCaption");
     hoursCaption.innerText = "Regular Hours:";
     infoDiv.append(hoursCaption);
     const unListHours = document.createElement('ul');
@@ -78,9 +91,10 @@ showParkInfo = parks => {
     unListHours.append(sunday);
     infoDiv.append(unListHours);
 
+    //address
     const parkAddrTitle = document.createElement('h2');
     parkAddrTitle.className = "pkHelp";
-    parkAddrTitle.setAttribute("id", "Park Address Caption");
+    parkAddrTitle.setAttribute("id", "ParkAddressCaption");
     parkAddrTitle.innerText = "Park Address: ";
     infoDiv.append(parkAddrTitle);
     const addrStr = document.createElement('p');
@@ -89,9 +103,10 @@ showParkInfo = parks => {
     addrStr.setAttribute("id", "Park Address");
     infoDiv.append(addrStr);
 
+    //passes
     const passTitle = document.createElement('h2');
     passTitle.className = "pkHelp";
-    passTitle.setAttribute("id", "Passes Caption");
+    passTitle.setAttribute("id", "PassesCaption");
     passTitle.innerText = "Passes: ";
     infoDiv.append(passTitle);
     const unListPasses = document.createElement('ul');
@@ -104,9 +119,10 @@ showParkInfo = parks => {
     }
     infoDiv.append(unListPasses);
 
+    //fees
     const feeTitle = document.createElement('h2');
     feeTitle.className = "pkHelp";
-    feeTitle.setAttribute("id", "Fees Caption");
+    feeTitle.setAttribute("id", "FeesCaption");
     feeTitle.innerText = "Fees: ";
     infoDiv.append(feeTitle);
     const unListFees = document.createElement('ul');
@@ -119,17 +135,19 @@ showParkInfo = parks => {
     }
     infoDiv.append(unListFees);
 
+    //NPS URL
     const link = document.createElement('a');
     link.className = "pkURL";
     link.setAttribute('href', `${park.url}`);
-    link.setAttribute('id', 'Park Link');
+    link.setAttribute('id', 'ParkLink');
     link.setAttribute('align', 'center');
     link.innerText = "National Parks Page";
     infoDiv.append(link);
 
+    //photos
     const imgTitle = document.createElement('h2');
     imgTitle.className = "pkHelp";
-    imgTitle.setAttribute("id", "Img Caption");
+    imgTitle.setAttribute("id", "ImgCaption");
     imgTitle.innerText = "Gallery: ";
     infoDiv.append(imgTitle);
     for(let i = 0; i < park.images.length; i++){
