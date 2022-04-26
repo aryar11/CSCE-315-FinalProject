@@ -126,6 +126,9 @@ As for the gear in your backpack, you'll need:</p>
       <br>
       <dl class="dl" id ="trail-list"> </dl>
     </div>
+    <p>
+      <input type="button" value="Print Itinerary" onclick="myApp.printTable()" />
+  </p>
   </div>
 
 
@@ -205,5 +208,17 @@ As for the gear in your backpack, you'll need:</p>
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6S6lDX249i90uGLFx1HoA_qUusGzYWDg&callback=initMap&v=weekly"
   defer>
   </script>
+
+<script>
+  var myApp = new function () {
+      this.printTable = function () {
+          var tab = document.getElementById('itenerary');
+          var win = window.open('', '', 'height=700,width=700');
+          win.document.write(tab.outerHTML);
+          win.document.close();
+          win.print();
+      }
+  }
+</script>
   </body>
   </html>
