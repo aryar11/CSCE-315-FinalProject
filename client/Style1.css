@@ -131,7 +131,7 @@ button.styleSwitch {
 
  input.searchBar {
    margin: 100px;
-   margin-bottom: 175px;
+   margin-bottom: 50px;
    padding: 10px;
    width: 50%;
    height: 50%;
@@ -373,7 +373,7 @@ div.image {
 
 /* } */
 
-div.pkname {
+.pkname {
   color: rgb(124, 142, 75);
   text-align: center;
   font-family: Poppins, sans-serif;
@@ -424,19 +424,21 @@ div.pkres {
 h1.searchpkname {
   font-size: 30px;
   margin-bottom: 10px;
+  align-items: center;
 }
 
 img.pkresimg {
   width: 400px;
   margin-bottom:20px;
+  padding: 20px;
   align-items: center;
   align-content: center;
 }
 
-img {
+/* img {
   margin: 50px;
   margin-left: 115px;
-}
+} */
 
 div.pkmap {
   float:left;
@@ -448,8 +450,10 @@ div.pkmap {
  div.pkdirect {
   margin-left: 100px;
   margin:75px;
+  border-width: medium;
+  border-color: red;
   float: left;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 div.text {
@@ -496,9 +500,10 @@ h2.pkHelp {
   font-size: 30px;
 }
 
-p.pkHelper {
+.pkHelper {
   font-size: 20px;
   padding: 10px;
+  margin-left: 10px;
 }
 
 h1.prepinfo {

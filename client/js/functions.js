@@ -146,7 +146,7 @@ function displayParkInformation(data){
     entranceDiv.className = "pkHelp";
     const fee = "$" + data.entranceFees[data.entranceFees.length-1].cost + " for " + data.entranceFees[data.entranceFees.length-1].description;
     const newheading = document.createElement("h1");
-    newheading.className = "pkdirections";
+    // newheading.className = "pkdirections";
     newheading.innerHTML = fee;
     entranceDiv.appendChild(newheading);
     budget1 = data.entranceFees[0].cost;
@@ -154,7 +154,7 @@ function displayParkInformation(data){
     if(data.entranceFees.length > 1){
 
         const entranceDiv1 = document.getElementById("admissionFee");
-        entranceDiv1.className = "pkprice";
+        // entranceDiv1.className = "pkdirect";
         var last1 =  data.entranceFees[0];
         budget2 = last1.cost;
         const fee1 = "$" + last1.cost + " for " + last1.description;
@@ -178,6 +178,27 @@ function displayParkInformation(data){
     /*
     get directions info
     */
+    // const directionsDiv = document.getElementById("direction");
+    // directionsDiv.className = "pkdirect";
+    // const directions = data.directionsInfo;
+    // const directionHeading = document.createElement("h1");
+    // directionHeading.className = "pkdirections";
+    //
+    // directionHeading.innerHTML = directions;
+    //
+    // directionsDiv.appendChild(directionHeading);
+    //
+    // const directionURLHeading = document.createElement("a");
+    // directionURLHeading.className = "pkURL";
+    // var link = document.createTextNode("Click Here for more direction details");
+    // directionURLHeading.appendChild(link);
+    //
+    // directionURLHeading.title  = "Click Here for more direction details";
+    //
+    // directionURLHeading.href = data.directionsUrl;
+    // directionURLHeading.target="_blank";
+    // directionsDiv.appendChild(directionURLHeading);
+
     const directionsDiv = document.getElementById("direction");
     directionsDiv.className("pkdirect");
     const directions = data.directionsInfo;
@@ -198,6 +219,7 @@ function displayParkInformation(data){
     directionURLHeading.href = data.directionsUrl;
     directionURLHeading.target="_blank";
     directionsDiv.appendChild(directionURLHeading);
+
 
 }
 

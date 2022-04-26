@@ -28,7 +28,8 @@ searchResults.addEventListener('keyup', (e) => {
 
 showParks = parks => {
     const parksDiv = document.querySelector('#parksList');
-    const resultsDiv = document.createElement('div.pkres');
+    const resultsDiv = document.createElement('div');
+    resultsDiv.className = "pkres";
     resultsDiv.setAttribute("id", "results");
     parksDiv.append(resultsDiv);
 
