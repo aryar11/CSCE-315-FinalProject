@@ -44,7 +44,7 @@
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
 /* The side navigation menu */
 .sidebar {
-  margin: 0;
+  margin-top: -50px;
   padding: 0;
   width: 200px;
   background-color: white; /*Same as page color*/
@@ -53,7 +53,7 @@
   overflow: auto;
 }
 
-/* Sidebar links */
+/* ----------------------------- Sidebar links ------------------------------- */
 .sidebar a {
   display: block;
   color: black;
@@ -72,6 +72,36 @@
   background-color: rgba(192, 218, 116, .5);
   color: black;
 }
+
+.sidebarsearch {
+  margin-top: 100px;
+  padding-top: 0;
+  width: 200px;
+  background-color: white; /*Same as page color*/
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebarsearch a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebarsearch a.active {
+  background-color: rgba(192, 218, 116, .5);
+  color: black;
+}
+
+/* Links on mouse-over */
+.sidebarsearch a:hover:not(.active) {
+  background-color: rgba(192, 218, 116, .5);
+  color: black;
+}
+
 
 div.form {
   display: block;
@@ -374,12 +404,12 @@ div.image {
 
 /* } */
 
-.pkname {
+h1.pkname {
   color: rgb(124, 142, 75);
   text-align: center;
   font-family: Poppins, sans-serif;
+  /* margin-right: 150px; */
   font-size: 60px;
-  margin-right: 150px;
 }
 
 div.pkdes {
@@ -499,6 +529,7 @@ h2.pkHelp {
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
   font-size: 30px;
+  padding-top: 120px;
 }
 
 .pkHelper {
@@ -536,8 +567,4 @@ li {
 .insidewrap {
   float: left;
   overflow:hidden;
-}
-
-section {
-  margin-top: 120px;
 }

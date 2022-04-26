@@ -90,7 +90,8 @@ function displayParkInformation(data){
     */
     const nameDiv = document.getElementById("parkName");
     const parkName = data.fullName;
-    const heading = document.createElement("h1.pkname");
+    const heading = document.createElement("h1");
+    heading.className = "pkname";
     heading.innerHTML = parkName;
 
     nameDiv.appendChild(heading);
@@ -178,29 +179,8 @@ function displayParkInformation(data){
     /*
     get directions info
     */
-    // const directionsDiv = document.getElementById("direction");
-    // directionsDiv.className = "pkdirect";
-    // const directions = data.directionsInfo;
-    // const directionHeading = document.createElement("h1");
-    // directionHeading.className = "pkdirections";
-    //
-    // directionHeading.innerHTML = directions;
-    //
-    // directionsDiv.appendChild(directionHeading);
-    //
-    // const directionURLHeading = document.createElement("a");
-    // directionURLHeading.className = "pkURL";
-    // var link = document.createTextNode("Click Here for more direction details");
-    // directionURLHeading.appendChild(link);
-    //
-    // directionURLHeading.title  = "Click Here for more direction details";
-    //
-    // directionURLHeading.href = data.directionsUrl;
-    // directionURLHeading.target="_blank";
-    // directionsDiv.appendChild(directionURLHeading);
-
     const directionsDiv = document.getElementById("direction");
-    directionsDiv.className("pkdirect");
+    directionsDiv.className = "pkdirect";
     const directions = data.directionsInfo;
     const directionHeading = document.createElement("h1");
     directionHeading.className = "pkdirections";
@@ -219,7 +199,6 @@ function displayParkInformation(data){
     directionURLHeading.href = data.directionsUrl;
     directionURLHeading.target="_blank";
     directionsDiv.appendChild(directionURLHeading);
-
 
 }
 
