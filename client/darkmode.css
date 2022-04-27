@@ -50,7 +50,7 @@
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
 /* The side navigation menu */
 .sidebar {
-  margin: 0;
+  margin-top: -200px;
   padding: 0;
   width: 200px;
   background-color: rgb(16, 17, 22); /*Same as page color*/
@@ -77,6 +77,35 @@
 .sidebar a:hover:not(.active) {
   background-color: rgba(192, 218, 116, .5);
   color:rgb(240, 240, 240);
+}
+
+.sidebarsearch {
+  margin-top: 100px;
+  padding-top: 0;
+  width: 200px;
+  background-color: rgb(16, 17, 22); /*Same as page color*/
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebarsearch a {
+  display: block;
+  color: rgb(240, 240, 240)s;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebarsearch a.active {
+  background-color: rgba(192, 218, 116, .5);
+  color: black;
+}
+
+/* Links on mouse-over */
+.sidebarsearch a:hover:not(.active) {
+  background-color: rgba(192, 218, 116, .5);
+  color: black;
 }
 
 div.form {
@@ -268,7 +297,7 @@ h2 {
 h2.Prepare{
   color: rgb(240, 240, 240);
   font-family: Poppins, sans-serif;
-  margin-top: 100px;
+  margin-top: 110px;
   font-size: 65px;
 }
 
@@ -343,7 +372,149 @@ div.search {
 #WildFA{
   background: url('CommonInj.jpg');
   background-repeat: no-repeat;
-  background-size: cover; /*using contain on this does not cover the entire section. 
+  background-size: cover; /*using contain on this does not cover the entire section.
   margin-left: 200px;
 }
 */
+
+
+/*
+  API formatting
+*/
+
+/* PLAN RESULTS */
+
+h1.pkname {
+  color: rgb(192, 218, 116);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  /* margin-right: 150px; */
+  font-size: 65px;
+}
+
+div.pkdes {
+  color: rgb(240, 240, 240);
+  font-size: 30px;
+  float: left;
+  width: 500px;
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+div.pkwrapper {
+  overflow: hidden;
+  margin: 25px;
+}
+
+div.pkact {
+   color: rgb(240, 240, 240);
+   overflow: hidden;
+   float: left;
+   margin-right: 75px;
+   margin-left: 200px;
+   /* color: rgb(43, 58, 103); */
+   font-size: 30px;
+   margin-top: 20px;
+ }
+
+ h2.pk {
+   font-size: 35px;
+ }
+
+  /* //might need to change so they're img's */
+  div.pkpics {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+div.pkres {
+  /* finishing making a pkres div, need to edit results, put pics next to text */
+  align-items: center;
+}
+
+h1.searchpkname {
+  font-size: 35px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+/* TODO: probably still needs editing */
+img.pkresimg {
+  width: 400px;
+  margin-bottom:20px;
+  padding: 20px;
+  align-items: center;
+  align-content: center;
+}
+
+div.pkmap {
+  float:left;
+  position: absolute;
+  margin-right: 100px;
+  overflow:hidden;
+}
+
+ div.pkdirect {
+  margin-left: 100px;
+  margin:75px;
+  float: left;
+  /* overflow: hidden; */
+}
+
+div.text {
+  margin-left: 100px;
+  margin: 75px;
+  float: left;
+  overflow:hidden;
+}
+
+h1.pkdirections {
+  color: rgb(192, 218, 116);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 30px;
+  margin-left: 100px;
+}
+
+a.pkURL {
+  justify-content: center;
+  font-family: Poppins, sans-serif;
+
+}
+
+div.generalInfo {
+  margin: 50px;
+}
+
+/* a.pkURL:active {
+  color: rgb(43, 58, 103);
+} */
+
+h2.pkHelp {
+  color: rgb(240, 240, 240);
+  font-family: Poppins, sans-serif;
+  font-size: 35px;
+  padding-top: 120px;
+}
+
+.pkHelper {
+  font-size: 30px;
+  padding: 10px;
+  margin-left: 10px;
+  /* margin-top: px; */
+}
+
+h1.prepinfo {
+  font-size: 45px;
+}
+
+li {
+  margin-left: 20px;
+}
+
+.insidewrap {
+  float: left;
+  overflow:hidden;
+}

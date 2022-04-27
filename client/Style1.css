@@ -482,8 +482,6 @@ div.pkmap {
  div.pkdirect {
   margin-left: 100px;
   margin:75px;
-  border-width: medium;
-  border-color: red;
   float: left;
   /* overflow: hidden; */
 }
