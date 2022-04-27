@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/functions.js"></script>
+  <script src = "translate.js"></script>
   <script src="js/switchStyles.js"></script>
   <link rel="icon" href="img/favicon.png">
   <!--Google Translate functions -->
@@ -22,6 +23,14 @@
     <a href="plan.html">Plan</a>
     <a href="search.html">Explore</a>
     <a href="safety.html">Prepare</a>
+    <form action="/action_page.php">
+      <label for="lang">Language:</label>
+      <select name="lang" id="lang">
+        <option value="en" onclick="SwitchLang()">English</option>
+        <option value="es">Español</option>
+        <option value="fn">Francés</option>
+      </select>
+    </form>
   </div>
 </head>
 
