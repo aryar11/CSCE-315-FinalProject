@@ -144,12 +144,12 @@ function displayParkInformation(data){
     */
     var budget1, budget2;
     const entranceDiv = document.getElementById("admissionFee");
-    entranceDiv.className = "pkHelp";
+    // entranceDiv.className = "pkHelp";
     const fee = "$" + data.entranceFees[data.entranceFees.length-1].cost + " for " + data.entranceFees[data.entranceFees.length-1].description;
     const newheading = document.createElement("h1");
     // newheading.className = "pkdirections";
     newheading.innerHTML = fee;
-    entranceDiv.appendChild(newheading);
+    // entranceDiv.appendChild(newheading);
     budget1 = data.entranceFees[0].cost;
 
     if(data.entranceFees.length > 1){
@@ -163,7 +163,7 @@ function displayParkInformation(data){
         const newheading1 = document.createElement("p");
         newheading1.className = "pkHelper";
         newheading1.innerHTML = fee1;
-        entranceDiv1.appendChild(newheading1);
+        // entranceDiv1.appendChild(newheading1);
     }
 
     const budget = localStorage.getItem("budget");
@@ -200,6 +200,22 @@ function displayParkInformation(data){
     directionURLHeading.target="_blank";
     directionsDiv.appendChild(directionURLHeading);
 
+    // const directionsDiv = document.getElementById("direction");
+    // const directions = data.directionsInfo;
+    // const directionHeading = document.createElement("h1");
+    // directionHeading.innerHTML = directions;
+    //
+    // directionsDiv.appendChild(directionHeading);
+    //
+    // const directionURLHeading = document.createElement("a");
+    // var link = document.createTextNode("Click Here for more direction details");
+    // directionURLHeading.appendChild(link);
+    //
+    // directionURLHeading.title  = "Click Here for more direction details";
+    //
+    // directionURLHeading.href = data.directionsUrl;
+    // directionURLHeading.target="_blank";
+    // directionsDiv.appendChild(directionURLHeading);
 }
 
 
