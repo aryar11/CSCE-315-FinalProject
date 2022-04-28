@@ -20,6 +20,7 @@ $.ajax(settings).done(function (response) {
 	console.log(response);
 });
 
-function SwitchLang()
+
+function SwitchLang(lan)
 {
 }
