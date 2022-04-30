@@ -61,7 +61,7 @@
       </ul></div>
     </div>
     <div id="parkImages" class="pkpics"></div>
-
+    <div><button onClick="window.location.reload();" id="refreshBtn">Don't like your park? Click here to refresh!</button></div>
   </div>
 
   <div id="Logistics" class="tabcontent">
@@ -157,7 +157,7 @@ As for the gear in your backpack, you'll need:</h2>
   <script type="text/javascript" >
 
     const state = localStorage.getItem("state");
-    localStorage.removeItem("state");
+    //localStorage.removeItem("state");
     console.log(state);
     var iteminJSON = 0;
 
@@ -221,5 +221,9 @@ As for the gear in your backpack, you'll need:</h2>
         }
     }
   </script>
+
+
+
+
   </body>
   </html>

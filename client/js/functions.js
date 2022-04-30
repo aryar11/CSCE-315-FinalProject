@@ -169,7 +169,7 @@ function displayParkInformation(data){
     }
 
     const budget = localStorage.getItem("budget");
-    localStorage.removeItem("budget");
+    //localStorage.removeItem("budget");
 
     if(parseInt(budget) < budget1 ){
 
@@ -223,9 +223,9 @@ function displayParkInformation(data){
 
 function itenerarySetup(weatherdata, parkdata){
     const start = localStorage.getItem("startDate");
-    localStorage.removeItem("startDate");
+    //localStorage.removeItem("startDate");
     const end = localStorage.getItem("endDate");
-    localStorage.removeItem("endDate");
+    //localStorage.removeItem("endDate");
 
     var startDate = new Date(start.toString());
     var endDate = new Date(end.toString());
