@@ -91,7 +91,7 @@
 
 .sidebarsearch a {
   display: block;
-  color: rgb(240, 240, 240)s;
+  color: rgb(240, 240, 240);
   padding: 16px;
   text-decoration: none;
 }
@@ -517,4 +517,17 @@ li {
 .insidewrap {
   float: left;
   overflow:hidden;
+}
+
+#printButton {
+  background-color: rgb(124, 142, 75);
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }

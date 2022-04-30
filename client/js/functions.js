@@ -244,7 +244,7 @@ function itenerarySetup(weatherdata, parkdata){
     var weather = [];
     var hightemp = [];
     var lowtemp = [];
-    console.log(FutureInt, "   ", numOfDays);
+    //console.log(FutureInt, "   ", numOfDays);
     if(FutureInt <= 7){
         for(var i = 0 ; i <= numOfDays + FutureInt ; i++){
             if(i >= FutureInt && i<=7){
@@ -312,7 +312,7 @@ function itenerarySetup(weatherdata, parkdata){
                     weatherRow.append(weatherDay);
                 }
             }
-            else if(FutureInt+numOfDays > 7){
+            else if(FutureInt+numOfDays >= 7){
                 console.log(i , "  " ,hightemp[i], "   ", weather[i]);
                 if(weather[i] != undefined){
                     let weatherDay = document.createElement('td');
@@ -320,7 +320,6 @@ function itenerarySetup(weatherdata, parkdata){
                     weatherRow.append(weatherDay);
                 }
             }
-
             else{
                 let weatherDay = document.createElement('td');
                 weatherDay.innerText = "";
@@ -362,7 +361,7 @@ function displayLocalTrails(traildata){
     }
     let list = document.getElementById("trail-list");
     let title = document.createElement("h2");
-    title.innerText = "Here are some hiking/biking trails at this park:" + '\r\n';
+    title.innerText = "Here are some hiking/biking trails you can check out nearby:" + '\r\n';
     list.appendChild(title);
     for(var i = 0; i < trailList.length ; i++){
         if(i >= 10){
