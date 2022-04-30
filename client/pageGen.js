@@ -136,12 +136,17 @@ showParkInfo = parks => {
     infoDiv.append(unListFees);
 
     //NPS URL
+    const linkTitle = document.createElement('h2');
+    linkTitle.className = "pkHelp";
+    linkTitle.setAttribute("id", "ParkLink");
+    linkTitle.innerText = "Reference: ";
+    infoDiv.append(linkTitle);
     const link = document.createElement('a');
     link.className = "pkURL";
     link.setAttribute('href', `${park.url}`);
-    link.setAttribute('id', 'ParkLink');
-    link.setAttribute('align', 'center');
-    link.innerText = "National Parks Page";
+    // link.setAttribute('id', 'ParkLink');
+    link.setAttribute('target', "_blank");
+    link.innerText = "      National Parks Page";
     infoDiv.append(link);
 
     //photos

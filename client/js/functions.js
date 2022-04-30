@@ -126,11 +126,13 @@ function displayParkInformation(data){
     Grabbing the first two images from API reponse
     */
     const img1 = document.createElement("img");
+    img1.className = "pkresimg";
     img1.src= data.images[1].url; //image 1
     img1.width="500"
     img1.height="400"
 
     const img2 = document.createElement("img");
+    img2.className = "pkresimg";
     img2.src= data.images[0].url; //image 2
     img2.width="500"
     img2.height="400"
