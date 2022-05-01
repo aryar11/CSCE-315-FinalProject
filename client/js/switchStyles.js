@@ -21,13 +21,13 @@ function setStyle(){
     var style = localStorage.getItem("styleType");
     var ele = document.getElementById("theme");
     var png = document.getElementById("logo");
-    if (style == "Style1.css"){
-      ele.setAttribute('href', 'Style1.css');
-      png.setAttribute('src', 'img/happycamper.png');
-    }
-    else{
+    if (style == "darkmode.css"){
       ele.setAttribute('href', 'darkmode.css');
       png.setAttribute('src', 'img/happycamper_dark.png');
+    }
+    else{
+      ele.setAttribute('href', 'Style1.css');
+      png.setAttribute('src', 'img/happycamper.png');
     }
 }
 /* This function calls the setStyle function everytime a webpage loads. I did it as a separate section so that in the future I can add more functions to this
