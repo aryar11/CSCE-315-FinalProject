@@ -312,6 +312,7 @@ function itinerarySetup(weatherdata, parkdata){
                 console.log(i , "  " ,hightemp[i], "   ", weather[i]);
                 if(weather[i] != undefined ){
                     let weatherDay = document.createElement('td');
+                    weatherDay.className = "tablebodyele";
                     weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
                     weatherDay.contentEditable = "false";
                     weatherRow.append(weatherDay);
@@ -321,12 +322,14 @@ function itinerarySetup(weatherdata, parkdata){
                 console.log(i , "  " ,hightemp[i], "   ", weather[i]);
                 if(weather[i] != undefined){
                     let weatherDay = document.createElement('td');
+                    weatherDay.className = "tablebodyele";
                     weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
                     weatherRow.append(weatherDay);
                 }
             }
             else{
                 let weatherDay = document.createElement('td');
+                weatherDay.className = "tablebodyele";
                 weatherDay.innerText = "";
                 weatherRow.append(weatherDay);
             }
@@ -337,11 +340,13 @@ function itinerarySetup(weatherdata, parkdata){
         let tableBodyRow = document.createElement('tr');
         tableBodyRow.className = "tablebodyrow";
         let hour = document.createElement('td');
+        hour.className = "tablebodyele";
         hour.innerText = hours[i];
         hour.contentEditable = "false";
         tableBodyRow.append(hour);
         for(var j = 0 ; j < numOfDays ; j++ ){
             let formInput = document.createElement('td');
+            formInput.className = "tablebodyele";
             // if(i == 0){
             //     formInput.innerText = 'Click Here to Build Itinerary';
             // }

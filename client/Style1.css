@@ -525,7 +525,7 @@ h2.pkHelp {
 }
 
 .pkHelper {
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   margin-left: 10px;
   /* margin-top: px; */
@@ -592,7 +592,7 @@ tr.tablebodyrow {
   border-color: black;
 }
 
-td {
+td.tablebodyele {
   font-size: 15px;
   text-align: center;
   padding-left: 5px;
@@ -607,7 +607,7 @@ tr.tblHeaderRow {
   text-align: center;
 }
 
-table {
+table.itineraryTable {
   margin: 20px;
   width: 95%;
   justify-content: center;
@@ -621,7 +621,7 @@ table {
   border: none;
 }
 
-table, th, td {
+table.itineraryTable, th.date, td.tablebodyele {
   border: 1px solid black;
   border-collapse: collapse;
 }

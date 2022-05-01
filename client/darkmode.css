@@ -2,6 +2,7 @@
   black: rgb(16, 17, 22)
   green: rgb(192, 218, 116)
   white: rgb(240, 240, 240)
+  darker green: rgba(192, 218, 116, .75)
  */
 
 
@@ -25,6 +26,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 3;
 }
 .topnav a {
   float: left;
@@ -36,11 +38,11 @@
   margin: 25px;
 }
 .topnav a:hover {
-  background-color: rgba(192, 218, 116, .5);
+  background-color: rgba(192, 218, 116, .75);
   color: white;
 }
 .topnav a.active {
-  background-color: rgba(192, 218, 116, .5);
+  background-color: rgba(192, 218, 116, .75);
   color: white;
 }
 
@@ -69,13 +71,13 @@
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: rgba(192, 218, 116, .5);
+  background-color: rgba(192, 218, 116, .75);
   color:rgb(240, 240, 240);
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  background-color: rgba(192, 218, 116, .5);
+  background-color: rgba(192, 218, 116, .75);
   color:rgb(240, 240, 240);
 }
 
@@ -98,13 +100,13 @@
 
 /* Active/current link */
 .sidebarsearch a.active {
-  background-color: rgba(192, 218, 116, .5);
+  background-color: rgba(192, 218, 116, .75);
   color: black;
 }
 
 /* Links on mouse-over */
 .sidebarsearch a:hover:not(.active) {
-  background-color: rgba(192, 218, 116, .5);
+  background-color: rgba(192, 218, 116, .75);
   color: black;
 }
 
@@ -121,13 +123,13 @@ form.planner {
 div.form-button {
   text-align: center;
   /* padding: 10px; */
-  /* background-color: rgb(192, 218, 116); */
+  /* background-color: rgba(192, 218, 116, .75); */
 }
 
 button {
   border: none;
-  color: rgb(16, 17, 22);
-  background-color: rgb(192, 218, 116);
+  color: rgb(240, 240, 240);
+  background-color: rgba(192, 218, 116, .75);
   width: 50%;
   height: 50px;
   font-size: 30px;
@@ -144,7 +146,7 @@ button.styleSwitch {
   position:fixed;
   bottom: 10px;
   left: 10px;
-  background-color: rgb(192, 218, 116);
+  background-color: rgba(192, 218, 116, .75);
 }
 
 button.planB {
@@ -153,20 +155,30 @@ button.planB {
 }
 
 input.searchBar {
-  margin: 50px;
-  margin-bottom: 225px;
+  margin: 20px;
+  margin-bottom: 50px;
   padding: 10px;
-  width: 800px;
+  width: 50%;
   height: 50%;
+  font-size: 60px;
+  border: none;
+  color: rgb(240, 240, 240);
+  background-color: rgb(16, 17, 22);
+}
+
+/* Trying to get no border on the search bar */
+input.searchBar:focus{
   border: none;
 }
 
 label {
   color: rgb(240, 240, 240);
+  font-size: 15px;
 }
 
 input {
   color: rgb(16, 17, 22);
+  font-size: 15px;
 }
 
 input.form-control {
@@ -226,7 +238,7 @@ html {
 
 /* Style tab links */
 .tablink {
-  background-color: rgba(192, 218, 116, .5);
+  background-color:rgba(192, 218, 116, .75);
   color: rgb(240, 240, 240);
   font-family: Poppins, sans-serif;
   font-size: 20px;
@@ -234,7 +246,7 @@ html {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  /* padding: 14px 14px; */
   /* width: 33.33333%; */
   margin-right: 1px;
   margin-left: 1px;
@@ -244,7 +256,7 @@ html {
 }
 
 .tablink:hover {
-  background-color: rgba(192, 218, 116, .5);
+  background-color: rgba(192, 218, 116, .75);
 }
 
 /* Style the tab content (and add height:100% for full page content) */
@@ -254,10 +266,6 @@ html {
   display: inline-block;
   padding: 150px 20px;
   height: 100%;
-}
-
-div.pkname {
-  color: red;
 }
 
 /* #Overview {
@@ -320,7 +328,7 @@ p.home {
 }
 
 a {
-  color: rgb(192, 218, 116);
+  color: rgba(192, 218, 116, .75);
   font-family: Poppins, sans-serif;
   font-size: 20px;
 }
@@ -349,6 +357,7 @@ div.search {
 #map{
   height: 550px;
   width: 35%;
+  z-index: 1;
 }
 /* Comment Pics out for Presentation
 #BasicFA {
@@ -385,7 +394,7 @@ div.search {
 /* PLAN RESULTS */
 
 h1.pkname {
-  color: rgb(192, 218, 116);
+  color: rgba(192, 218, 116, .75);
   text-align: center;
   font-family: Poppins, sans-serif;
   /* margin-right: 150px; */
@@ -412,7 +421,7 @@ div.pkact {
    overflow: hidden;
    float: left;
    margin-right: 75px;
-   margin-left: 200px;
+   margin-left: 175px;
    /* color: rgb(43, 58, 103); */
    font-size: 30px;
    margin-top: 20px;
@@ -424,9 +433,7 @@ div.pkact {
 
   /* //might need to change so they're img's */
   div.pkpics {
-  width: 0;
-  height: 0;
-  opacity: 0;
+  text-align: center;
 }
 
 div.pkres {
@@ -442,11 +449,7 @@ h1.searchpkname {
 
 /* TODO: probably still needs editing */
 img.pkresimg {
-  width: 400px;
-  margin-bottom:20px;
-  padding: 20px;
-  align-items: center;
-  align-content: center;
+  margin: 100px;
 }
 
 div.pkmap {
@@ -471,7 +474,7 @@ div.text {
 }
 
 h1.pkdirections {
-  color: rgb(192, 218, 116);
+  color: rgba(192, 218, 116, .75);
   text-align: center;
   font-family: Poppins, sans-serif;
   font-size: 30px;
@@ -495,7 +498,7 @@ div.generalInfo {
 h2.pkHelp {
   color: rgb(240, 240, 240);
   font-family: Poppins, sans-serif;
-  font-size: 35px;
+  font-size: 40px;
   padding-top: 120px;
 }
 
@@ -519,7 +522,7 @@ li {
   overflow:hidden;
 }
 
-#printButton {
+/* #printButton {
   background-color: rgb(124, 142, 75);
   border: none;
   color: black;
@@ -543,4 +546,63 @@ li {
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
+} */
+
+tr.tablebodyrow {
+  border-width: 1px;
+  border-color: white;
+}
+
+td.tablebodyele {
+  font-size: 20px;
+  text-align: center;
+  padding-left: 5px;
+}
+
+th.date {
+  font-size: 30px;
+  text-align: center;
+}
+
+tr.tblHeaderRow {
+  text-align: center;
+}
+
+table.itineraryTable {
+  margin: 30px;
+  width: 95%;
+  justify-content: center;
+}
+
+.itentable {
+  justify-content: center;
+}
+
+.itineraryTableBody:active {
+  border: none;
+}
+
+table.itineraryTable, th.date, td.tablebodyele {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+dt {
+  color: rgb(240, 240, 240);
+  font-family: Poppins, sans-serif;
+  font-size: 30px;
+  margin: 10px;
+  margin-left: 30px;
+}
+
+.trailTitle {
+  color:rgba(192, 218, 116, .75);
+  margin: 20px;
+  font-size: 35px;
+}
+
+.reload {
+  font-size: 20px;
+  text-align: center;
+  /* padding:0; */
 }
