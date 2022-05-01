@@ -174,7 +174,7 @@ function displayParkInformation(data){
     if(parseInt(budget) < budget1 ){
 
         const newheading2 = document.createElement("h3");
-        newheading2.innerHTML = "*Note the park Entrance Fee is higher than your budget. We recommend adjusting your budget or refresh the page";
+        newheading2.innerHTML = "Note the park Entrance Fee is higher than your budget. We recommend adjusting your budget or refresh the page";
         entranceDiv.appendChild(newheading2);
     }
 
@@ -182,7 +182,7 @@ function displayParkInformation(data){
     get directions info
     */
     const directionsDiv = document.getElementById("direction");
-    directionsDiv.className = "pkdirect";
+    // directionsDiv.className = "pkdirect";
     const directions = data.directionsInfo;
     const directionHeading = document.createElement("h1");
     directionHeading.className = "pkdirections";
@@ -221,7 +221,7 @@ function displayParkInformation(data){
 }
 
 
-function itenerarySetup(weatherdata, parkdata){
+function itinerarySetup(weatherdata, parkdata){
     const start = localStorage.getItem("startDate");
     //localStorage.removeItem("startDate");
     const end = localStorage.getItem("endDate");
@@ -259,27 +259,28 @@ function itenerarySetup(weatherdata, parkdata){
         }
     }
 
-    const tablediv = document.getElementById("itenerary");
+    const tablediv = document.getElementById("itinerary");
 
     var tbl = document.createElement('table');
-    tbl.className = "iteneraryTable";
-    tbl.style.width = '100%';
+    tbl.className = "itineraryTable";
+    // tbl.style.width = '90%';
 
     let tblHead = document.createElement('thead');
-    tblHead.className = 'iteneraryTableHead';
+    tblHead.className = 'itineraryTableHead';
 
     let tblHeaderRow = document.createElement('tr');
-    tblHeaderRow.className = 'iteneraryTableHeaderRow';
+    tblHeaderRow.className = 'itineraryTableHeaderRow';
     let hourheader = document.createElement('th');
-    hourheader.innerText = "hour";
+    hourheader.innerText = "";
     hourheader.contentEditable = "false";
     tblHeaderRow.append(hourheader);
 
 
     for(var i = 0 ; i < numOfDays ; i++ ){
         let day = document.createElement('th');
+        day.className = "date";
         const dateArray = startDate.toString().split(" ");
-        day.innerText = dateArray[0] + " " + dateArray[1] + " " + dateArray[2] + " " + dateArray[3];
+        day.innerText = dateArray[0] + ", " + dateArray[1] + " " + dateArray[2] + ", " + dateArray[3];
         day.contentEditable = "false";
         tblHeaderRow.append(day);
         startDate.setDate(startDate.getDate() + 1);
@@ -288,10 +289,10 @@ function itenerarySetup(weatherdata, parkdata){
     tblHead.append(tblHeaderRow);
     tbl.append(tblHead);
 
-    let iteneraryTableBody = document.createElement('tbody');
-    iteneraryTableBody.className = "iteneraryTableBody";
+    let itineraryTableBody = document.createElement('tbody');
+    itineraryTableBody.className = "itineraryTableBody";
 
-    tbl.append(iteneraryTableBody);
+    tbl.append(itineraryTableBody);
 
     tablediv.append(tbl);
 
@@ -303,6 +304,7 @@ function itenerarySetup(weatherdata, parkdata){
         let weatherRow = document.createElement('tr');
         weatherRow.className = "tablebodyrow";
         let blankSquare = document.createElement('td');
+        blankSquare.className = "tablebodyele";
         blankSquare.innerText = "";
         weatherRow.append(blankSquare);
         for(var i = 0 ; i < numOfDays ; i ++){
@@ -311,6 +313,7 @@ function itenerarySetup(weatherdata, parkdata){
                 if(weather[i] != undefined ){
                     let weatherDay = document.createElement('td');
                     weatherDay.innerText = weather[i] + " with a high of " + hightemp[i] + "\u00B0F";
+                    weatherDay.contentEditable = "false";
                     weatherRow.append(weatherDay);
                 }
             }
@@ -328,7 +331,7 @@ function itenerarySetup(weatherdata, parkdata){
                 weatherRow.append(weatherDay);
             }
         }
-        iteneraryTableBody.append(weatherRow);
+        itineraryTableBody.append(weatherRow);
 
     for(var i = 0; i < 24 ; i++){
         let tableBodyRow = document.createElement('tr');
@@ -339,12 +342,12 @@ function itenerarySetup(weatherdata, parkdata){
         tableBodyRow.append(hour);
         for(var j = 0 ; j < numOfDays ; j++ ){
             let formInput = document.createElement('td');
-            if(i == 0){
-                formInput.innerText = 'Click Here to Build Itinerary';
-            }
+            // if(i == 0){
+            //     formInput.innerText = 'Click Here to Build Itinerary';
+            // }
             tableBodyRow.append(formInput);
         }
-        iteneraryTableBody.append(tableBodyRow);
+        itineraryTableBody.append(tableBodyRow);
     }
 }
 
@@ -363,7 +366,8 @@ function displayLocalTrails(traildata){
     }
     let list = document.getElementById("trail-list");
     let title = document.createElement("h2");
-    title.innerText = "Here are some hiking/biking trails you can check out nearby:" + '\r\n';
+    title.className = "trailTitle";
+    title.innerText = "Some trails nearby to explore:" + '\r\n';
     list.appendChild(title);
     for(var i = 0; i < trailList.length ; i++){
         if(i >= 10){
@@ -373,9 +377,9 @@ function displayLocalTrails(traildata){
         let dt = document.createElement("dt");
         dt.innerText = trailList[i];
         list.appendChild(dt);
-        //let dd = document.createElement("dd");
-       // dd.innerText = "Diffuculty:" + trailDescription[i];
-        //list.appendChild(dd);
+        // let dd = document.createElement("dd");
+        // dd.innerText = "Diffuculty:" + trailDescription[i];
+        // list.appendChild(dd);
     }
 
 }

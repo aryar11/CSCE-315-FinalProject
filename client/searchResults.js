@@ -65,11 +65,11 @@ showParks = parks => {
 
     parks.forEach(park => {
         const parkDiv = document.createElement('div');
-        parkDiv.className = "pkres";
+        parkDiv.className = "pksearch";
         const parkElement = document.createElement('h1');
         parkElement.className = "searchpkname";
         const parkImg = document.createElement('img');
-        parkImg.className = "pkresimg";
+        parkImg.className = "pksearchimg";
         const pageLink = document.createElement('a');
         if(park.states == stateVal){
             parkElement.innerText = `${park.fullName}`;
@@ -86,7 +86,7 @@ showParks = parks => {
                 localStorage.setItem('startVal', start);
             }, true);
             parkImg.setAttribute("src", `${park.images[0].url}`);
-            parkImg.setAttribute("width", "200px");
+            parkImg.setAttribute("width", "300px");
             parkImg.setAttribute("height", "auto");
             pageLink.append(parkElement);
             //parkDiv.append(parkElement);

@@ -130,6 +130,12 @@ button {
   margin-bottom: 80px;
 }
 
+.reload {
+  font-size: 20px;
+  text-align: center;
+  /* padding:0; */
+}
+
 button.styleSwitch {
   font-size: 20px;
   margin: 0px;
@@ -457,6 +463,10 @@ img.pkresimg {
   margin: 100px;
 }
 
+img.pksearchimg {
+  margin: 20px;
+}
+
 div.pkpics {
   text-align: center;
   /* margin-left: 200px; */
@@ -464,23 +474,26 @@ div.pkpics {
 
 div.pkmap {
   float:left;
-  position: absolute;
-  margin-right: 100px;
-  overflow:hidden;
+  /* display: inline-block; */
+  /* display: inline-block; */
+  /* position: absolute;
+  margin-right: 100px; */
+  /* overflow:hidden; */
 }
 
  div.pkdirect {
-  margin-left: 100px;
-  margin:75px;
-  float: left;
+  /* margin-left: 100px;
+  margin:75px; */
+  /* float: left; */
   /* overflow: hidden; */
 }
 
 div.text {
-  margin-left: 100px;
+  float: left;
+  /* margin-left: 100px;
   margin: 75px;
   float: left;
-  overflow:hidden;
+  overflow:hidden; */
 }
 
 h1.pkdirections {
@@ -548,7 +561,7 @@ li {
   overflow:hidden;
 }
 
-#printButton {
+/* #printButton {
   background-color: rgb(43, 58, 103);
   border: none;
   color: white;
@@ -572,4 +585,56 @@ li {
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
+} */
+
+tr.tablebodyrow {
+  border-width: 1px;
+  border-color: black;
+}
+
+td {
+  font-size: 15px;
+  text-align: center;
+  padding-left: 5px;
+}
+
+th.date {
+  font-size: 20px;
+  text-align: center;
+}
+
+tr.tblHeaderRow {
+  text-align: center;
+}
+
+table {
+  margin: 20px;
+  width: 95%;
+  justify-content: center;
+}
+
+.itentable {
+  justify-content: center;
+}
+
+.itineraryTableBody:active {
+  border: none;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+dt {
+  color: rgb(124, 142, 75);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  margin-left: 30px;
+}
+
+.trailTitle {
+  color: rgb(43, 58, 103);
+  margin: 20px;
 }

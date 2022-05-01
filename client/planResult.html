@@ -61,23 +61,24 @@
       </ul></div>
     </div>
     <div id="parkImages" class="pkpics"></div>
-    <div><button onClick="window.location.reload();" id="refreshBtn">Don't like your park? Click here to refresh!</button></div>
+    <!-- id="refreshBtn" -->
+    <center><button class="reload" onClick="window.location.reload();">Looking to Take Different Path? Refresh Here for a New Park</button></center>
   </div>
 
   <div id="Logistics" class="tabcontent">
     <!-- <h3>Logistics</h3> -->
     <div class=pkwrapper>
     <div id="map" class="pkmap"></div>
-    <!-- <div class="text"> -->
-      <div id="direction" class="pkdirect">"directions: "</div>
-      <!-- <div id = "admissionFee" class="pkdirect"><h2 class="pkHelp">Prices:</h2></div> -->
-  <!-- </div> -->
+    <div class="text">
+      <div id="direction"><h2 class="pkHelp">Directions:</h2></div>
+      <div id = "admissionFee"><h2 class="pkHelp">Prices:</h2></div>
+    </div>
   </div>
 
     <div id="generalInfo" class="generalInfo">
       <br><br><br><br>
       <h1 class="prepinfo">
-      Depending on how you plan on camping, the folllowing information might differ but here's our
+      Depending on how you plan on camping, the following information might differ but here's our
       general camping checklist for you:</h1>
       <!-- <h2> -->
         <h2 class="pkHelp">
@@ -121,15 +122,16 @@ As for the gear in your backpack, you'll need:</h2>
   </div>
 
   <div id="Create Itinerary" class="tabcontent">
-    <h3>Create Itinerary</h3>
-    <div id = "itenerary" contenteditable="true"></div>
+    <h3>Plan Your Trip! Select a day and time and type in an activity, meal, ect. to add it to your schedule</h3>
+    <center><div id = "itinerary" class="ittable" contenteditable="true"></div></center>
     <div id = "trails">
       <br>
       <br>
       <dl class="dl" id ="trail-list"> </dl>
     </div>
     <p>
-      <input type="button" value="Print Itinerary" id="printButton" onclick="myApp.printTable()" />
+      <!-- id="printButton" -->
+      <center><button class="reload" onclick="myApp.printTable()">Print Itinerary</button></center>
   </p>
   </div>
 
@@ -191,7 +193,7 @@ As for the gear in your backpack, you'll need:</h2>
     xmlHttp1.open( "GET", "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutely,hourly,current&appid=a6b714ce7c4872dfde0a49406a4c050b&units=imperial", false ); // false for synchronous request
     xmlHttp1.send( null );
     var response1 = jQuery.parseJSON(xmlHttp1.responseText);
-    itenerarySetup(response1, response.data[iteminJSON]);
+    itinerarySetup(response1, response.data[iteminJSON]);
     /*
     trail api
     */
@@ -213,7 +215,7 @@ As for the gear in your backpack, you'll need:</h2>
   <script>
     var myApp = new function () {
         this.printTable = function () {
-            var tab = document.getElementById('itenerary');
+            var tab = document.getElementById('itinerary');
             var win = window.open('', '', 'height=700,width=700');
             win.document.write(tab.outerHTML);
             win.document.close();
