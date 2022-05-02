@@ -380,46 +380,17 @@ div.wrapper {
   /* width: 500px; */
   overflow: hidden;
 }
-/* Comment Pics out for Presentation Monday */
-div.image {
-  float: left;
-  background: url('img/FirstAidcropped.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-left: 350px;
-  margin-top: 30px;
-  height: 200px;
-  width: 80%;
+
+img.prep {
+  /* float: left; */
+  /* background: url('img/prep1F.jpg'); */
+  /* background-repeat: no-repeat;
+  background-size: contain; */
+  /* margin-left: 350px;
+  margin-top: 30px; */
+  height: auto;
+  width: 100%;
 }
-/* #Wildlife{
-  background: url('img/Wildlife.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: 200px;
-}
-#EMS{
-  background: url('img/Prepare4EMS.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: 200px;
-}
-#WildFA{
-  background: url('img/CommonInj.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*using contain on this does not cover the entire section.  */
-  /* margin-left: 200px; */
-
-
-/* div. {
-  background-image: url("img/FirstAid.jpg");
-  background-repeat: no-repeat;
-  /* background-position: left top; */
-  /* padding-top:100px;
-  margin-bottom:100px; */
-
-
-/* } */
 
 h1.pkname {
   color: rgb(43, 58, 103);

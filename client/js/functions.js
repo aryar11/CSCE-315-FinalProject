@@ -149,7 +149,7 @@ function displayParkInformation(data){
     // entranceDiv.className = "pkHelp";
     const fee = "$" + data.entranceFees[data.entranceFees.length-1].cost + " for " + data.entranceFees[data.entranceFees.length-1].description;
     const newheading = document.createElement("h1");
-    // newheading.className = "pkdirections";
+    newheading.className = "pkHelper";
     newheading.innerHTML = fee;
     entranceDiv.appendChild(newheading);
     budget1 = data.entranceFees[0].cost;
@@ -185,7 +185,7 @@ function displayParkInformation(data){
     // directionsDiv.className = "pkdirect";
     const directions = data.directionsInfo;
     const directionHeading = document.createElement("h1");
-    // directionHeading.className = "pkdirections";
+    directionHeading.className = "pkHelper";
 
     directionHeading.innerHTML = directions;
 

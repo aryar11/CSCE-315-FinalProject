@@ -20,6 +20,13 @@
   margin-right: 275px;
 }
 
+#google_translate_element {
+  margin-top: 40px;
+  position:fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
 .topnav {
   background-color: rgb(16, 17, 22);
   overflow: hidden;
@@ -252,7 +259,7 @@ html {
   margin-left: 1px;
   width: 33.195%;
   display: inline-block;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .tablink:hover {
@@ -307,6 +314,14 @@ h2.Prepare{
   font-family: Poppins, sans-serif;
   margin-top: 110px;
   font-size: 65px;
+}
+
+h2.pkHelpPlan {
+  color: rgba(192, 218, 116, .75);
+  font-family: Poppins, sans-serif;
+  font-size: 40px;
+  /* padding-top: 120px; */
+  padding: 20px;
 }
 
 h3 {
@@ -423,8 +438,9 @@ div.pkact {
    margin-right: 75px;
    margin-left: 175px;
    /* color: rgb(43, 58, 103); */
-   font-size: 30px;
+   font-size: 25px;
    margin-top: 20px;
+   padding-left: 10px;
  }
 
  h2.pk {
@@ -441,6 +457,12 @@ div.pkres {
   align-items: center;
 }
 
+img.prep{
+  opacity: 0;
+  width: 0px;
+  height:0px;
+}
+
 h1.searchpkname {
   font-size: 35px;
   margin-bottom: 10px;
@@ -454,23 +476,11 @@ img.pkresimg {
 
 div.pkmap {
   float:left;
-  position: absolute;
   margin-right: 100px;
-  overflow:hidden;
-}
-
- div.pkdirect {
-  margin-left: 100px;
-  margin:75px;
-  float: left;
-  /* overflow: hidden; */
 }
 
 div.text {
-  margin-left: 100px;
-  margin: 75px;
-  float: left;
-  overflow:hidden;
+  top: 0;
 }
 
 h1.pkdirections {
@@ -481,10 +491,15 @@ h1.pkdirections {
   margin-left: 100px;
 }
 
-a.pkURL {
+.pkURL {
+  /* text-align: center; */
   justify-content: center;
-  font-family: Poppins, sans-serif;
+  color:rgba(192, 218, 116, .75);
+  font-size: 20px;
+}
 
+.pkURl:hover {
+  color:rgba(192, 218, 116, .75);
 }
 
 div.generalInfo {
@@ -604,5 +619,6 @@ dt {
 .reload {
   font-size: 20px;
   text-align: center;
+  margin-bottom: 100px;
   /* padding:0; */
 }
