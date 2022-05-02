@@ -2,12 +2,14 @@
 //searchButton.addEventListener("click", getParks);
 var parkName = "";
 let count = 0;
+let noResults;
 
 function getParks(){
     const resultsDiv = document.getElementById('results')
     //console.log(resultsDiv);
     if(resultsDiv != null){
         resultsDiv.remove();
+        noResults = true;
         count = 0;
         parkName = "";
     }
@@ -72,6 +74,7 @@ showParks = parks => {
         parkImg.className = "pksearchimg";
         const pageLink = document.createElement('a');
         if(park.states == stateVal){
+            noResults = false;
             parkElement.innerText = `${park.fullName}`;
             pageLink.setAttribute("href", '#'); //have to change this once on heroku
             pageLink.setAttribute("id", `${park.fullName}`);
@@ -94,10 +97,10 @@ showParks = parks => {
             parkDiv.append(pageLink);
             parkDiv.setAttribute("id", `${park.fullName}`);
             resultsDiv.append(parkDiv);
-            count++;
         }
+        count++;
     });
-    if(count == 0){
+    if(noResults){
         const noresults = document.createElement('h2');
         noresults.setAttribute("id", "noresults");
         noresults.innerText = "No Results Found";
