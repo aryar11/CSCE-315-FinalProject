@@ -100,7 +100,8 @@ showParks = parks => {
     if(count == 0){
         const noresults = document.createElement('h2');
         noresults.setAttribute("id", "noresults");
-        noresults.innerText = "No Results Found";
+        noresults.className = "error";
+        noresults.innerText = "Looks like you wandered off trail, try another search!";
         resultsDiv.append(noresults);
     }
 }

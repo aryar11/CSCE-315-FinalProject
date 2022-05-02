@@ -32,12 +32,11 @@
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
     </script>
-  
+
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <section></section>
     <div class="topnav">
       <img src= img/happycamper.png id = "logo">
-      <div id="google_translate_element"></div>
       <a href="index.html">Home</a>
       <a class = "active" href="plan.html">Plan</a>
       <a href="search.html">Explore</a>
@@ -49,6 +48,7 @@
 </style>
 </head>
   <body >
+    <div id="google_translate_element"></div>
     <button class="styleSwitch" onclick="switchStyles()"></button>
 
   <button class="tablink" onclick="openPage('Overview', this)"id="defaultOpen">Overview</button>
@@ -69,18 +69,20 @@
       <!--JavaScript will add items-->
       </ul></div>
     </div>
-    <div id="parkImages" class="pkpics"></div>
+    <div id="parkImages" class="pics"></div>
     <!-- id="refreshBtn" -->
     <center><button class="reload" onClick="window.location.reload();">Looking to Take Different Path? Refresh for a New Park</button></center>
   </div>
 
   <div id="Logistics" class="tabcontent">
-    <!-- <h3>Logistics</h3> -->
+    <h2 class="pk">The Nitty Gritty Details</h2>
     <div class=pkwrapper>
-    <div id="map" class="pkmap"></div>
+      <div id="map" class="pkmap"></div>
     <div class="text">
-      <div id="direction"><h2 class="pkHelp">Directions:</h2></div>
-      <div id = "admissionFee"><h2 class="pkHelp">Prices:</h2></div>
+      <h2 class="pkHelpPlan">Directions:</h2>
+      <center><div id="direction"></div></center>
+      <h2 class="pkHelpPlan">Prices:</h2>
+      <center><div id = "admissionFee"></div></center>
     </div>
   </div>
 

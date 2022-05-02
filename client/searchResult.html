@@ -20,11 +20,10 @@
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
     </script>
-  
+
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div class="topnav">
       <img src= img/happycamper.png id = "logo">
-      <div id="google_translate_element"></div>
       <a href="index.html">Home</a>
       <a href="plan.html">Plan</a>
       <a class = "active" href="search.html">Explore</a>
@@ -46,10 +45,12 @@
     <a href="#ImgCaption">Gallery</a>
   </div>
 
+  <div id="google_translate_element"></div>
     <button class="styleSwitch" onclick="switchStyles()"></button>
     <!-- <h1>Explore Around You</h1> -->
     <div id = "clickResult"></div>
   </main>
+  
 </body>
 <script src="searchResults.js"></script>
 <script src="pageGen.js"></script>
