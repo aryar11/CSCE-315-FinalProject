@@ -622,3 +622,6 @@ dt {
   margin-bottom: 100px;
   /* padding:0; */
 }
+
+
+#loadOverlay{display: none;}

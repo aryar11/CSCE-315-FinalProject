@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Happy Camper</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      id="theme"
+      type="text/css"
+      media="screen"
+      href="Style1.css"
+    />
+    <!-- <link rel="stylesheet" type="css" media="screen" href="css/Style1.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <script src="js/switchStyles.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <span id="styleType"></span>
+    <link rel="icon" href="img/favicon.png" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Happy Camper</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <link rel="stylesheet" id="theme" type="text/css" media="screen" href="Style1.css" />
-  <!-- <link rel="stylesheet" type="css" media="screen" href="css/Style1.css" /> -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-  <script src="js/switchStyles.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <span id="styleType"></span>
-  <link rel="icon" href="img/favicon.png">
-
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
     </script>
 
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
     <div class="topnav">
       <img src= img/happycamper.png id = "logo">
       <a href="index.html">Home</a>
       <a href="plan.html">Plan</a>
-      <a class = "active" href="search.html">Explore</a>
+      <a class="active" href="search.html">Explore</a>
       <a href="safety.html">Prepare</a>
     </div>
-</head>
+  </head>
 
-<body>
-  <main>
+  <body>
+    <div
+      id="loadOverlay"
+      style="
+        background-color: #333;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 2000;
+      "
+    ></div>
+    <main>
+      <div class="sidebarsearch">
+        <a href="#ParkDescriptionTitle">Description</a>
+        <a href="#ParkActivitiesTitle">Activities</a>
+        <a href="#HoursCaption">Hours</a>
+        <a href="#ParkAddressCaption">Address</a>
+        <a href="#PassesCaption">Pass Information</a>
+        <a href="#FeesCaption">Fees</a>
+        <a href="#ParkLink">Reference</a>
+        <a href="#ImgCaption">Gallery</a>
+      </div>
 
-  <div class="sidebarsearch">
-    <a href=#ParkDescriptionTitle>Description</a>
-    <a href="#ParkActivitiesTitle">Activities</a>
-    <a href="#HoursCaption">Hours</a>
-    <a href="#ParkAddressCaption">Address</a>
-    <a href=#PassesCaption>Pass Information</a>
-    <a href="#FeesCaption">Fees</a>
-    <a href="#ParkLink">Reference</a>
-    <a href="#ImgCaption">Gallery</a>
-  </div>
-
-  <div id="google_translate_element"></div>
-    <button class="styleSwitch" onclick="switchStyles()"></button>
-    <!-- <h1>Explore Around You</h1> -->
-    <div id = "clickResult"></div>
-  </main>
-  
-</body>
-<script src="searchResults.js"></script>
-<script src="pageGen.js"></script>
+      <div id="google_translate_element"></div>
+      <button class="styleSwitch" onclick="switchStyles()"></button>
+      <!-- <h1>Explore Around You</h1> -->
+      <div id="clickResult"></div>
+    </main>
+  </body>
+  <script src="searchResults.js"></script>
+  <script src="pageGen.js"></script>
 </html>
