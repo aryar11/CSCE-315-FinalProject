@@ -6,7 +6,7 @@
  */
 
 .main{
-  margin-top: 40px;
+  margin-top: 80px;
 }
 .topnav {
   background-color: rgb(255,255,255);
@@ -39,7 +39,11 @@
   width: 35%;
   height: auto;
   margin: 20px;
-  margin-right: 400px;
+  margin-right: 150px;
+}
+#google_translate_element {
+  float: left;
+  margin-top: 40px;
 }
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
 /* The side navigation menu */
@@ -243,7 +247,7 @@ body,
 html {
   height: 100%;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 70px;
   font-family: Arial;
 }
 
@@ -292,12 +296,12 @@ h1 {
   color: rgb(43, 58, 103);
   text-align: center;
   font-family: Poppins, sans-serif;
-  margin-top: 100px;
+  margin-top: 140px;
   font-size: 60px;
 }
 
 h1.home {
-  margin-top: 150px;
+  margin-top: 190px;
   margin-bottom: 50px;
 }
 
@@ -309,7 +313,7 @@ h2 {
 h2.Prepare{
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
-  margin-top: 120px;
+  margin-top: 160px;
 }
 
 h3 {
