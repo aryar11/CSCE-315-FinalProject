@@ -7,6 +7,7 @@
 
 .main{
   margin-top: 80px;
+  margin-bottom: 100px;
 }
 .topnav {
   background-color: rgb(255,255,255);
@@ -175,7 +176,7 @@ button.styleSwitch {
 
  input.searchBar {
    margin: 100px;
-   /* margin-bottom: px; */
+   /* margin-bottom: 0px; */
    padding: 10px;
    width: 50%;
    height: 50%;
@@ -252,8 +253,11 @@ html {
   height: 100%;
   margin: 0;
   margin-top: 70px;
+  margin-bottom: 70px;
   font-family: Arial;
 }
+
+body { min-height: 100vh; }
 
 /* Style tab links */
 .tablink {
@@ -317,7 +321,7 @@ h2 {
 h2.Prepare{
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
-  margin-top: 160px;
+  margin-top: 120px;
 }
 
 h3 {
