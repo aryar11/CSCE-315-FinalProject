@@ -19,7 +19,7 @@ function getParks(){
 const searchResults = document.getElementById('autocomplete');
 let userIn = "";
 searchResults.addEventListener('keyup', (e) => {
-    userIn = e.target.value;
+    userIn = e.target.value.toLocaleUpperCase();
     console.log(e.key);
     if (e.key === 'Enter') {
         getParks();
@@ -34,7 +34,7 @@ showParks = parks => {
     parksDiv.append(resultsDiv);
 
     let splitCity = userIn.split(",");
-    let stateVal;
+    let stateVal = "";
     console.log(splitCity);
     if(userIn.search(',') != -1){
         if(userIn.search(',') == 2){
@@ -94,9 +94,15 @@ showParks = parks => {
             parkDiv.append(pageLink);
             parkDiv.setAttribute("id", `${park.fullName}`);
             resultsDiv.append(parkDiv);
+            count++;
         }
-        count++;
     });
+    if(count == 0){
+        const noresults = document.createElement('h2');
+        noresults.setAttribute("id", "noresults");
+        noresults.innerText = "No Results Found";
+        resultsDiv.append(noresults);
+    }
 }
 
 function loadPage(){
@@ -104,54 +110,54 @@ function loadPage(){
 }
 
 const statesCon = [
-    ['Arizona', 'AZ'],
-    ['Alabama', 'AL'],
-    ['Alaska', 'AK'],
-    ['Arkansas', 'AR'],
-    ['California', 'CA'],
-    ['Colorado', 'CO'],
-    ['Connecticut', 'CT'],
-    ['Delaware', 'DE'],
-    ['Florida', 'FL'],
-    ['Georgia', 'GA'],
-    ['Hawaii', 'HI'],
-    ['Idaho', 'ID'],
-    ['Illinois', 'IL'],
-    ['Indiana', 'IN'],
-    ['Iowa', 'IA'],
-    ['Kansas', 'KS'],
-    ['Kentucky', 'KY'],
-    ['Louisiana', 'LA'],
-    ['Maine', 'ME'],
-    ['Maryland', 'MD'],
-    ['Massachusetts', 'MA'],
-    ['Michigan', 'MI'],
-    ['Minnesota', 'MN'],
-    ['Mississippi', 'MS'],
-    ['Missouri', 'MO'],
-    ['Montana', 'MT'],
-    ['Nebraska', 'NE'],
-    ['Nevada', 'NV'],
-    ['New Hampshire', 'NH'],
-    ['New Jersey', 'NJ'],
-    ['New Mexico', 'NM'],
-    ['New York', 'NY'],
-    ['North Carolina', 'NC'],
-    ['North Dakota', 'ND'],
-    ['Ohio', 'OH'],
-    ['Oklahoma', 'OK'],
-    ['Oregon', 'OR'],
-    ['Pennsylvania', 'PA'],
-    ['Rhode Island', 'RI'],
-    ['South Carolina', 'SC'],
-    ['South Dakota', 'SD'],
-    ['Tennessee', 'TN'],
-    ['Texas', 'TX'],
-    ['Utah', 'UT'],
-    ['Vermont', 'VT'],
-    ['Virginia', 'VA'],
-    ['Washington', 'WA'],
-    ['West Virginia', 'WV'],
-    ['Wisconsin', 'WI'],
-    ['Wyoming', 'WY'],
+    ['ARIZONA', 'AZ'],
+    ['ALABAMA', 'AL'],
+    ['ALASKA', 'AK'],
+    ['ARKANSAS', 'AR'],
+    ['CALIFORNIA', 'CA'],
+    ['COLORADO', 'CO'],
+    ['CONNECTICUT', 'CT'],
+    ['DELAWARE', 'DE'],
+    ['FLORIDA', 'FL'],
+    ['GEORGIA', 'GA'],
+    ['HAWAII', 'HI'],
+    ['IDAHO', 'ID'],
+    ['ILLINOIS', 'IL'],
+    ['INDIANA', 'IN'],
+    ['IOWA', 'IA'],
+    ['KANSAS', 'KS'],
+    ['KENTUCKY', 'KY'],
+    ['LOUISIANA', 'LA'],
+    ['MAINE', 'ME'],
+    ['MARYLAND', 'MD'],
+    ['MASSACHUSETTS', 'MA'],
+    ['MICHIGAN', 'MI'],
+    ['MINNESOTA', 'MN'],
+    ['MISSISSIPPI', 'MS'],
+    ['MISSOURI', 'MO'],
+    ['MONTANA', 'MT'],
+    ['NEBRASKA', 'NE'],
+    ['NEVADA', 'NV'],
+    ['NEW HAMPSHIRE', 'NH'],
+    ['NEW JERSEY', 'NJ'],
+    ['NEW MEXICO', 'NM'],
+    ['NEW YORK', 'NY'],
+    ['NORTH CAROLINA', 'NC'],
+    ['NORTH DAKOTA', 'ND'],
+    ['OHIO', 'OH'],
+    ['OKLAHOMA', 'OK'],
+    ['OREGON', 'OR'],
+    ['PENNSYLVANIA', 'PA'],
+    ['RHODE ISLAND', 'RI'],
+    ['SOUTH CAROLINA', 'SC'],
+    ['SOUTH DAKOTA', 'SD'],
+    ['TENNESSEE', 'TN'],
+    ['TEXAS', 'TX'],
+    ['UTAH', 'UT'],
+    ['VERMONT', 'VT'],
+    ['VIRGINA', 'VA'],
+    ['WASHINGTON', 'WA'],
+    ['WEST VIRGINIA', 'WV'],
+    ['WISCONSIN', 'WI'],
+    ['WYOMING', 'WY'],
 ];
