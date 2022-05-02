@@ -15,7 +15,7 @@
   top: 0;
   width: 100%;
   z-index: 3;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .topnav a {
   float: left;
@@ -51,7 +51,7 @@
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
 /* The side navigation menu */
 .sidebar {
-  margin-top: -50px;
+  margin-top: -60px;
   padding: 0;
   width: 200px;
   background-color: white; /*Same as page color*/
@@ -81,7 +81,7 @@
 }
 
 .sidebarsearch {
-  margin-top: 100px;
+  margin-top: 50px;
   padding-top: 0;
   width: 200px;
   background-color: white; /*Same as page color*/
@@ -456,7 +456,6 @@ div.pkact {
  }
 
 div.pkres {
-  /* finishing making a pkres div, need to edit results, put pics next to text */
   align-items: center;
 }
 
@@ -516,7 +515,7 @@ h2.pkHelp {
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
   font-size: 30px;
-  /* padding-top: 120px; */
+  padding-top: 120px;
   /* padding: 20px; */
 }
 
