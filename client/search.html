@@ -19,11 +19,10 @@
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
     </script>
-  
+
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div class="topnav">
       <img src= img/happycamper.png id = "logo">
-      <div id="google_translate_element"></div>
       <a href="index.html">Home</a>
       <a href="plan.html">Plan</a>
       <a class = "active" href="search.html">Explore</a>
@@ -33,10 +32,11 @@
 
 <body>
   <main>
+    <div id="google_translate_element"></div>
     <button class="styleSwitch" onclick="switchStyles()"></button>
     <h1>Explore Around You</h1>
   <div class = "search">
-    <div id = "searchWrapper">
+    <div id = "searchWrapper" class="searchWrapper">
       <input class="searchBar" type="text" id="autocomplete" placeholder="Explore" autocomplete="on">
       <h3>Search a State or City and Press Enter,</h3>
       <h3>Then Click a Park to View Details</h3>
@@ -66,6 +66,7 @@
    google.maps.event.addListener(window, 'load', initialize());
 </script>
   <!-- <img class="downarrow" src="img/downarrow.png" alt="down arrow in shape of tree"> -->
+  
 </body>
 
 </html>

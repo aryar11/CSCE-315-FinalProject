@@ -151,21 +151,21 @@ function displayParkInformation(data){
     const newheading = document.createElement("h1");
     // newheading.className = "pkdirections";
     newheading.innerHTML = fee;
-    // entranceDiv.appendChild(newheading);
+    entranceDiv.appendChild(newheading);
     budget1 = data.entranceFees[0].cost;
 
     if(data.entranceFees.length > 1){
 
         const entranceDiv1 = document.getElementById("admissionFee");
-        // entranceDiv1.className = "pkdirect";
+        entranceDiv1.className = "pkHelper";
         var last1 =  data.entranceFees[0];
         budget2 = last1.cost;
         const fee1 = "$" + last1.cost + " for " + last1.description;
 
-        const newheading1 = document.createElement("p");
+        const newheading1 = document.createElement("h1");
         newheading1.className = "pkHelper";
         newheading1.innerHTML = fee1;
-        // entranceDiv1.appendChild(newheading1);
+        entranceDiv1.appendChild(newheading1);
     }
 
     const budget = localStorage.getItem("budget");
@@ -173,7 +173,7 @@ function displayParkInformation(data){
 
     if(parseInt(budget) < budget1 ){
 
-        const newheading2 = document.createElement("h3");
+        const newheading2 = document.createElement("h2");
         newheading2.innerHTML = "Note the park Entrance Fee is higher than your budget. We recommend adjusting your budget or refresh the page";
         entranceDiv.appendChild(newheading2);
     }
@@ -185,7 +185,7 @@ function displayParkInformation(data){
     // directionsDiv.className = "pkdirect";
     const directions = data.directionsInfo;
     const directionHeading = document.createElement("h1");
-    directionHeading.className = "pkdirections";
+    // directionHeading.className = "pkdirections";
 
     directionHeading.innerHTML = directions;
 
@@ -201,23 +201,6 @@ function displayParkInformation(data){
     directionURLHeading.href = data.directionsUrl;
     directionURLHeading.target="_blank";
     directionsDiv.appendChild(directionURLHeading);
-
-    // const directionsDiv = document.getElementById("direction");
-    // const directions = data.directionsInfo;
-    // const directionHeading = document.createElement("h1");
-    // directionHeading.innerHTML = directions;
-    //
-    // directionsDiv.appendChild(directionHeading);
-    //
-    // const directionURLHeading = document.createElement("a");
-    // var link = document.createTextNode("Click Here for more direction details");
-    // directionURLHeading.appendChild(link);
-    //
-    // directionURLHeading.title  = "Click Here for more direction details";
-    //
-    // directionURLHeading.href = data.directionsUrl;
-    // directionURLHeading.target="_blank";
-    // directionsDiv.appendChild(directionURLHeading);
 }
 
 
