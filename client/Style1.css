@@ -625,3 +625,5 @@ dt {
 .end {
   margin-bottom: 100px;
 }
+
+#loadOverlay{display: none;}
