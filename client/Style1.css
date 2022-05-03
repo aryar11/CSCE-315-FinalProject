@@ -7,6 +7,7 @@
 
 .main{
   margin-top: 80px;
+  margin-bottom: 100px;
 }
 .topnav {
   background-color: rgb(255,255,255);
@@ -15,7 +16,7 @@
   top: 0;
   width: 100%;
   z-index: 3;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .topnav a {
   float: left;
@@ -51,7 +52,7 @@
 /*This Side Bar Code is from the following: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp "
 /* The side navigation menu */
 .sidebar {
-  margin-top: -50px;
+  margin-top: -60px;
   padding: 0;
   width: 200px;
   background-color: white; /*Same as page color*/
@@ -81,7 +82,7 @@
 }
 
 .sidebarsearch {
-  margin-top: 100px;
+  margin-top: 50px;
   padding-top: 0;
   width: 200px;
   background-color: white; /*Same as page color*/
@@ -175,7 +176,7 @@ button.styleSwitch {
 
  input.searchBar {
    margin: 100px;
-   /* margin-bottom: px; */
+   /* margin-bottom: 0px; */
    padding: 10px;
    width: 50%;
    height: 50%;
@@ -252,8 +253,11 @@ html {
   height: 100%;
   margin: 0;
   margin-top: 70px;
+  margin-bottom: 70px;
   font-family: Arial;
 }
+
+body { min-height: 100vh; }
 
 /* Style tab links */
 .tablink {
@@ -317,7 +321,7 @@ h2 {
 h2.Prepare{
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
-  margin-top: 160px;
+  margin-top: 120px;
 }
 
 h3 {
@@ -376,46 +380,17 @@ div.wrapper {
   /* width: 500px; */
   overflow: hidden;
 }
-/* Comment Pics out for Presentation Monday */
-div.image {
-  float: left;
-  background: url('img/FirstAidcropped.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-left: 350px;
-  margin-top: 30px;
-  height: 200px;
-  width: 80%;
+
+img.prep {
+  /* float: left; */
+  /* background: url('img/prep1F.jpg'); */
+  /* background-repeat: no-repeat;
+  background-size: contain; */
+  /* margin-left: 350px;
+  margin-top: 30px; */
+  height: auto;
+  width: 100%;
 }
-/* #Wildlife{
-  background: url('img/Wildlife.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: 200px;
-}
-#EMS{
-  background: url('img/Prepare4EMS.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: 200px;
-}
-#WildFA{
-  background: url('img/CommonInj.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*using contain on this does not cover the entire section.  */
-  /* margin-left: 200px; */
-
-
-/* div. {
-  background-image: url("img/FirstAid.jpg");
-  background-repeat: no-repeat;
-  /* background-position: left top; */
-  /* padding-top:100px;
-  margin-bottom:100px; */
-
-
-/* } */
 
 h1.pkname {
   color: rgb(43, 58, 103);
@@ -456,7 +431,6 @@ div.pkact {
  }
 
 div.pkres {
-  /* finishing making a pkres div, need to edit results, put pics next to text */
   align-items: center;
 }
 
@@ -516,7 +490,7 @@ h2.pkHelp {
   color: rgb(124, 142, 75);
   font-family: Poppins, sans-serif;
   font-size: 30px;
-  /* padding-top: 120px; */
+  padding-top: 120px;
   /* padding: 20px; */
 }
 
@@ -651,3 +625,5 @@ dt {
 .end {
   margin-bottom: 100px;
 }
+
+#loadOverlay{display: none;}
