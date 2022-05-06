@@ -141,8 +141,8 @@ function reverseGeocodingWithGoogle(latitude, longitude) {
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyD6S6lDX249i90uGLFx1HoA_qUusGzYWDg`)
     .then( res => res.json())
     .then(response => {
-        console.log("User's Location Info: ", response.results[0].address_components[3].short_name)
-        userIn = response.results[0].address_components[3].short_name;
+        console.log("User's Location Info: ", response.results[0].address_components[4].short_name)
+        userIn = response.results[0].address_components[4].short_name;
         getParks();
      })
      .catch(status => {
